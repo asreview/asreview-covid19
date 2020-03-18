@@ -12,7 +12,7 @@ class Covid19Latest(BaseDataSet):
     authors = ["Allen institute for AI"]
     link = "https://pages.semanticscholar.org/coronavirus-research"
     year = 2020
-    license = None
+    license = "Covid dataset license"
 
 
 class Covid19DataGroup(BaseDataGroup):
