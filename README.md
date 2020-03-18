@@ -5,7 +5,7 @@ Extension that adds Covid-19 related datasets to ASReview
 Currently only one [dataset](https://pages.semanticscholar.org/coronavirus-research) is available.
 Any suggestions for more datasets related to scientific literature on Covid-19 is welcome.
 
-It is currently dependent on the newest development 
+It is currently dependent on the newest development
 [branch](https://github.com/asreview/asreview/pull/181) of ASReview. Please install ASReview
 from this branch.
 

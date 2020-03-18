@@ -24,6 +24,8 @@ setup(
     url='https://github.com/asreview/asreview-covid19',
     author='Utrecht University',
     author_email='asreview@uu.nl',
+    include_package_data=True,
+#     package_data={'[covid19', ['config.json'])],
     classifiers=[
         # How mature is this project? Common values are
         #   3 - Alpha
@@ -38,11 +40,11 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    keywords='asreview plot covid19 optimization',
+    keywords='asreview covid19',
     packages=find_namespace_packages(include=['asreviewcontrib.*']),
     namespace_package=["asreview"],
     install_requires=[
-        "asreview>=0.7.0", "numpy", "tqdm", "sklearn"
+        "asreview>=0.7.0",
     ],
 
     extras_require={
