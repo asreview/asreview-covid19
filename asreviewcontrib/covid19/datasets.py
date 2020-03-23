@@ -16,11 +16,6 @@ class Cord19Dataset(BaseDataSet):
     link = "https://pages.semanticscholar.org/coronavirus-research"
     year = 2020
 
-    def __init__(self):
-        if getattr(self, "name", None) is None:
-            self.name = self.id
-            super(Cord19Dataset, self).__init__()
-
 
 class Cord19_2020_03_13(Cord19Dataset):
     id = "all_metadata_20200313"
