@@ -47,8 +47,8 @@ class Cord19_Dec2019(Cord19Dataset):
     }
     date = "2020-03-22"
     url = ("https://raw.githubusercontent.com/asreview/"
-           "cord-19-publication-date/master/CORD19v4_pubdate_R/data/"
-           "CORD19_201912.csv")
+           "asreview-covid19/master/datasets/"
+           "cord19_v4_20191201.csv")
     sha512 = ("7943202bef6d829ac859f7b61b3706601fcd4ca360421e54449c530eb7ca20e"
               "e7dc0563cb0603d6c3ec1a9bc4ee9589f757a50f5abc48aa790e3dbac214719"
               "7f")
