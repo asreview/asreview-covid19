@@ -3,24 +3,23 @@ from asreview.datasets import BaseDataGroup
 
 
 class Cord19Dataset(BaseDataSet):
+    dataset_id = "cord19"
     authors = ["Allen institute for AI"]
-    id = "covid19"
     title = "CORD-19"
     topic = "Covid-19"
     license = "Covid dataset license"
     link = "https://pages.semanticscholar.org/coronavirus-research"
     last_update = "2020-03-13"
-    description = "A Free dataset on publications on the corona virus."
+    description = "A free dataset on publications on the corona virus."
     img_url = ("https://pages.semanticscholar.org/hs-fs/hubfs/"
                "covid-image.png?width=300&name=covid-image.png")
     link = "https://pages.semanticscholar.org/coronavirus-research"
     year = 2020
 
 
-class Cord19_2020_03_13(Cord19Dataset):
-    id = "all_metadata_20200313"
-    name = "cord19_all"
-    title = "All metadata at 2020-03-13"
+class Cord19DatasetV3(Cord19Dataset):
+    dataset_id = "cord19-v3"
+    title = "CORD-19 v3"
     sha512 = ("6741211cc47c04897b253a3eaf2d18e6d57391530f8cebe7d8c84310f82"
               "c90b2c55071157b418fb7b627302adbfae8838fb8c071516288b320b131"
               "03ac1ec7fc")
@@ -35,10 +34,9 @@ class Cord19_2020_03_13(Cord19Dataset):
            "2020-03-13/all_sources_metadata_2020-03-13.csv")
 
 
-class Cord19_Dec2019(Cord19Dataset):
-    id = "cord19_v4_20191201"
-    name = "cord19_after_dec19"
-    title = "CORD-19 subset from Dec 2019"
+class Cord19DatasetV4_Dec2019(Cord19Dataset):
+    dataset_id = "cord19-v4-2020"
+    title = "CORD-19 v4 since Dec. 2019"
     last_update = "2020-03-22"
     statistics = {
         "n_papers": 3513,
@@ -55,11 +53,11 @@ class Cord19_Dec2019(Cord19Dataset):
 
 
 class Covid19DataGroup(BaseDataGroup):
-    id = "covid19"
+    group_id = "covid19"
     description = "A Free dataset on publications on the corona virus."
 
     def __init__(self):
         super(Covid19DataGroup, self).__init__(
-            Cord19_2020_03_13(),
-            Cord19_Dec2019(),
+            Cord19DatasetV3(),
+            Cord19DatasetV4_Dec2019(),
         )
