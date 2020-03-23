@@ -1,0 +1,26 @@
+{
+name: "cord19_v4_20191201",
+title: "CORD-19 subset from Dec 2019",
+description: "A free dataset on publications on the corona virus.",
+last_update: "2020-03-22",
+license: "Covid dataset license",
+link: "https://pages.semanticscholar.org/coronavirus-research",
+authors: [
+"Allen institute for AI"
+],
+topic: "Covid-19",
+datasets: [
+{
+name: "metadata-2020-03-20",
+sha512: "",
+img_url: "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+timestamp: "2020-03-20",
+statistics: {
+n_papers: 3513,
+n_missing_titles: 1,
+n_missing_abstracts: 704
+},
+url: "https://github.com/asreview/cord-19-publication-date/blob/master/CORD19v4_pubdate_R/data/CORD19_201912.csv"
+}
+]
+}
