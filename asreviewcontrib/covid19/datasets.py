@@ -9,7 +9,7 @@ class Cord19Dataset(BaseDataSet):
     topic = "Covid-19"
     license = "Covid dataset license"
     link = "https://pages.semanticscholar.org/coronavirus-research"
-    last_update = "2020-03-13"
+    last_update = "2020-03-20"
     description = "A free dataset on publications on the corona virus."
     img_url = ("https://pages.semanticscholar.org/hs-fs/hubfs/"
                "covid-image.png?width=300&name=covid-image.png")
@@ -17,21 +17,20 @@ class Cord19Dataset(BaseDataSet):
     year = 2020
 
 
-class Cord19DatasetV3(Cord19Dataset):
-    dataset_id = "cord19-v3"
-    title = "CORD-19 v3"
-    sha512 = ("6741211cc47c04897b253a3eaf2d18e6d57391530f8cebe7d8c84310f82"
-              "c90b2c55071157b418fb7b627302adbfae8838fb8c071516288b320b131"
-              "03ac1ec7fc")
+class Cord19DatasetV4(Cord19Dataset):
+    dataset_id = "cord19-v4"
+    title = "CORD-19 v4"
+    sha512 = ("517e2399767aa1d387baaa07c42ef6ac9a5aec1e3a41f832974ee712413"
+              "272429f2a5ea658b32bb7330becac70df1ee5262ae1ddebb258a02aaaa2"
+              "d4b47335cc")
 
-    date = "2020-03-13"
+    date = "2020-03-20"
     statistics = {
-        "n_papers": 29500,
-        "n_missing_titles": 9,
-        "n_missing_abstracts": 2591,
+        "n_papers": 44220,
+        "n_missing_titles": 224,
+        "n_missing_abstracts": 8414,
     }
-    url = ("https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/"
-           "2020-03-13/all_sources_metadata_2020-03-13.csv")
+    url = ("https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-20/metadata.csv")
 
 
 class Cord19DatasetV4_Dec2019(Cord19Dataset):
@@ -58,6 +57,6 @@ class Covid19DataGroup(BaseDataGroup):
 
     def __init__(self):
         super(Covid19DataGroup, self).__init__(
-            Cord19DatasetV3(),
+            Cord19DatasetV4(),
             Cord19DatasetV4_Dec2019(),
         )
