@@ -1,26 +1,17 @@
 # asreview-covid19
 
-Extension that adds Covid-19 related datasets to ASReview
+Extension that adds Covid-19 related datasets to ASReview.
 
-Currently only one [dataset](https://pages.semanticscholar.org/coronavirus-research) is available.
+The CORD-19 machine learning dataset [dataset](https://pages.semanticscholar.org/coronavirus-research) is available. A second dataset with a subset of the articles of CORD-19 published since December 2019 is relevant for the COVID-19 disease outbreak. 
 Any suggestions for more datasets related to scientific literature on Covid-19 is welcome.
 
-It is currently dependent on the newest development
-[branch](https://github.com/asreview/asreview/pull/181) of ASReview. Please install ASReview
-from this branch.
-
-
-After cloning this repository, install the extension with:
+Install the extension with pip:
 
 ```bash
-pip install .
+pip install asreview-covid19
 ```
 
-and then you can use ASReview as usual with the new special dataset `covid19`:
-
-```bash
-asreview oracle covid19 --state_file myreview.h5
-```
+The datasets will be available in the ASReview software.  
 
 The extension will download the file from the internet for you, which depending on
 your internet can take a while. 
