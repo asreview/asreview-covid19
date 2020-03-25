@@ -20,9 +20,9 @@ class Cord19Dataset(BaseDataSet):
 class Cord19DatasetV4(Cord19Dataset):
     dataset_id = "cord19-v4"
     title = "CORD-19 v4"
-    sha512 = ("6741211cc47c04897b253a3eaf2d18e6d57391530f8cebe7d8c84310f82"
-              "c90b2c55071157b418fb7b627302adbfae8838fb8c071516288b320b131"
-              "03ac1ec7fc")
+    sha512 = ("517e2399767aa1d387baaa07c42ef6ac9a5aec1e3a41f832974ee712413"
+              "272429f2a5ea658b32bb7330becac70df1ee5262ae1ddebb258a02aaaa2"
+              "d4b47335cc")
 
     date = "2020-03-20"
     statistics = {
