@@ -33,7 +33,7 @@ class Cord19DatasetV5(Cord19Dataset):
 class Cord19DatasetV5_Dec2019(Cord19Dataset):
     dataset_id = "cord19-v5-2020"
     title = "CORD-19 v5 since Dec. 2019"
-    last_update = "2020-03-30"
+    last_update = "2020-03-27"
     statistics = {
         "n_papers": 4001,
         "n_missing_titles": 1,
