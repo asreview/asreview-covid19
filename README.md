@@ -1,43 +1,30 @@
-# asreview-covid19
-
 ![ASReview for COVID19](https://github.com/asreview/asreview/blob/master/images/intro-covid19-small.png?raw=true)
 
-Extension that adds Covid-19 related datasets to [ASReview](https://github.com/asreview/asreview).
+Extension to extend Covid-19 datasets to [ASReview](https://github.com/asreview/asreview).
 
-# ASReview
-The Active learning for Systematic Reviews ([ASReview] (https://github.com/asreview/asreview)) software implements learning algorithms that interactively query the researcher during the title/abstract pahse of a systematis search. This way of interactive training is known as Active Learning. ASReview offers support for classical learning algorithms and state-of-the-art learning algorithms like neural networks. The software can be used for classical systematic reviews for which the user uploads a dataset of papers, or one can make use of the built-in datasets. 
+# ASReview against Covid-19
+The Active learning for Systematic Reviews software, [ASReview](https://github.com/asreview/asreview)), implements learning algorithms that interactively query the researcher during the title and abstract reading phase of a systematic search. This way of interactive training is known as active learning. ASReview offers support for classical learning algorithms and state-of-the-art learning algorithms like neural networks. The software can be used for classical systematic reviews for which the user uploads a dataset of papers, or one can make use of the built-in datasets. 
 
-# The CORD-19 dataset
-The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is made available through a collaboration of the Allen Institute for AI, the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health. 
+To help combat the Covid-19 crisis, the ASReview team released an extension that integrates the latest scientific datasets on Covid-19 in the ASReview software.
 
-Version 5 of the dataset ([csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv), dated March 27, 2020) contains metadata of 45.8K publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications,  the preprint servers bioRxiv and medRxiv and papers contributed by specific publishers (currently Elsevier).
+## CORD-19 dataset
+The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is a dataset with scientific publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications, the preprint servers bioRxiv and medRxiv and papers contributed by specific publishers (currently Elsevier). The dataset is compiled and maintained by a collaboration of the Allen Institute for AI, the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health. Version 5 of the dataset ([csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv), dated March 27, 2020) contains metadata of 45.8K publications on COVID-19 and coronavirus-related research. The CORD-19 dataset is updated weekly. 
 
+## ASReview plugin
 
-Two versions of the CORD-19 dataset (publications relating to COVID-19) are made available in ASReview: the full dataset and a dataset with publications from December 2019 onwards. The CORD-19 dataset is updated weekly. The modified datasets described here will be updated shortly after.  The current datasets are based on **CORD-19 version 5 (released 2020-03-27)**
+To help combat the Covid-19 crisis, the ASReview Core Development team has decided to release a package that provides the latest scientific datasets on Covid-19. These are integrated automatically into ASReview once we install the correct packages, so reviewers can start reviewing the latest scientific literature on Covid-19 as soon as possible!
+Two versions of the CORD-19 dataset (publications relating to COVID-19) are made available in ASReview: 
 
-## Complete database
+- full CORD-19 dataset
+- CORD-19 dataset with publications from December 2019 onwards
 
-Information on publication time in the original dataset (v4) is  available for 96.7% of records, and  provided in various formats. The scripts in this repo are used to enrich information on first date of publication, making use of Crossref (for DOIs) and EuropePMC (for PMCIDs) APIs. As a result, date information in standard format is made available for 98.9% of all records in the CORD-19 dataset.  
+The current datasets are based on **CORD-19 version 5 (released 2020-03-27)**
 
-This information is available as separate dataset [CORD19id_date.csv](CORD19v5_pubdate_R/output/CORD19id_date.csv) containing the following variables:  
+The datasets are updated in ASReview plugin shortly after the release by the Allen Institute for AI. 
 
-* source database (PMC, WHO, etc)
-* identifiers(doi, PMCID en PMID)
-* date as supplied in CORD-19
-* date as retrieved from Crossref and PubMed Central
+## Installation and usage
 
-
-## Subset from Dec 2019 onwards
-Using the enriched date information, a subset of the CORD-19 dataset is created containing publications from Dec 2019 onwards (i.e. publication relating to the current COVID-19 outbreak). Date information in standard format is used, as well as originally supplied date information that contains the year 2020. This dataset contains 4001 records.
-
-This subset is available as a separate dataset [CORD19_201912.csv](CORD19v5_pubdate_R/output/CORD19_201912.csv) containing the following variables:  
-
-* all variables in CORD-19
-* date as retrieved from Crossref and PubMed Central
-
-
-# Installation of the Covid-19 Pluing
-The Covid-19 plug-in only works after [installaton of ASReview](https://asreview.readthedocs.io/en/latest/installation.html). 
+The Covid-19 plug-in requires ASReview 0.8 or higher. Install ASReview by following the instructions in [Installation of ASReview](https://asreview.readthedocs.io/en/latest/installation.html). 
 
 Install the extension with pip:
 
@@ -45,13 +32,18 @@ Install the extension with pip:
 pip install asreview-covid19
 ```
 
-The extension will download the file from the internet for you, which depending on your internet can take a while. 
-Now, to launch the ASReview user interface with the Cord-19 database, run the following in your shell:
+The datasets are immediately available after starting ASReview. 
 
 ```bash
 asreview oracle
 ```
 
-and follow the instruction of the [Quick Tour](https://asreview.readthedocs.io/en/latest/quicktour.html). 
+The datasets are selectable in Step 2 of the project initialization. For more information on the usage of ASReview, please have a look at the [Quick Tour](https://asreview.readthedocs.io/en/latest/quicktour.html). 
 
+## License and contact
 
+The ASReview software and the plugin have an Apache 2.0 LICENSE. For the datasets, please see the license of the CORD-19 dataset https://pages.semanticscholar.org/coronavirus-research. 
+
+This project is coordinated by by Rens van de Schoot (@Rensvandeschoot) and Daniel Oberski (@daob) and is part of the research work conducted by the Department of Methodology & Statistics, Faculty of Social and Behavioral Sciences, Utrecht University, The Netherlands. Maintainers are Jonathan de Bruin (@J535D165) and Raoul Schram (@qubixes).
+
+Got ideas for improvement? For any questions or remarks, please send an email to asreview@uu.nl.
