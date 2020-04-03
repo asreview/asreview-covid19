@@ -1,6 +1,6 @@
 ![ASReview for COVID19](https://github.com/asreview/asreview/blob/master/images/intro-covid19-small.png?raw=true)
 
-Extension to extend Covid-19 datasets to [ASReview](https://github.com/asreview/asreview).
+Extension to add publications on Covid-19 to [ASReview](https://github.com/asreview/asreview).
 
 # ASReview against Covid-19
 The Active learning for Systematic Reviews software, [ASReview](https://github.com/asreview/asreview)), implements learning algorithms that interactively query the researcher during the title and abstract reading phase of a systematic search. This way of interactive training is known as active learning. ASReview offers support for classical learning algorithms and state-of-the-art learning algorithms like neural networks. The software can be used for classical systematic reviews for which the user uploads a dataset of papers, or one can make use of the built-in datasets. 
@@ -39,6 +39,8 @@ asreview oracle
 ```
 
 The datasets are selectable in Step 2 of the project initialization. For more information on the usage of ASReview, please have a look at the [Quick Tour](https://asreview.readthedocs.io/en/latest/quicktour.html). 
+
+[![ASReview CORD19 datasets](https://github.com/asreview/asreview/blob/master/images/asrewiew-plugin-cord19-dataset.png?raw=true)](https://github.com/asreview/asreview-covid19)
 
 ## License and contact
 
