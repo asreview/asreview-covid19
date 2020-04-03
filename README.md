@@ -3,7 +3,7 @@
 Extension to add publications on COVID-19 to [ASReview](https://github.com/asreview/asreview).
 
 # ASReview against COVID-19
-The Active learning for Systematic Reviews software, [ASReview](https://github.com/asreview/asreview)), implements learning algorithms that interactively query the researcher during the title and abstract reading phase of a systematic search. This way of interactive training is known as active learning. ASReview offers support for classical learning algorithms and state-of-the-art learning algorithms like neural networks. The software can be used for traditional systematic reviews for which the user uploads a dataset of papers, or one can make use of the built-in datasets. 
+The Active learning for Systematic Reviews software [ASReview](https://github.com/asreview/asreview) implements learning algorithms that interactively query the researcher during the title and abstract reading phase of a systematic search. This way of interactive training is known as active learning. ASReview offers support for classical learning algorithms and state-of-the-art learning algorithms like neural networks. The software can be used for traditional systematic reviews for which the user uploads a dataset of papers, or one can make use of the built-in datasets. 
 
 To help combat the COVID-19 crisis, the ASReview team released an extension that integrates the latest scientific datasets on COVID-19 in the ASReview software.
 
