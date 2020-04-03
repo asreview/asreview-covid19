@@ -12,7 +12,7 @@ The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is
 
 ## ASReview plugin
 
-To help combat the COVID-19 crisis, the ASReview Core Development team has decided to release a package that provides the latest scientific datasets on COVID-19. These are integrated automatically into ASReview once we install the correct packages, so reviewers can start reviewing the latest scientific literature on COVID-19 as soon as possible!
+To help combat the COVID-19 crisis, the ASReview team has decided to release a package that provides the latest scientific datasets on COVID-19. These are integrated automatically into ASReview once we install the correct packages, so reviewers can start reviewing the latest scientific literature on COVID-19 as soon as possible!
 Two versions of the CORD-19 dataset (publications relating to COVID-19) are made available in ASReview: 
 
 - full CORD-19 dataset
