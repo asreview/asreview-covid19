@@ -141,7 +141,7 @@ count_date <- CORD19id_date %>%
   filter(is.na(date))
 #3780 still missing proper date
 
-filename3 <- "CORD19v4_R/output/CORD19id_date.csv"
+filename3 <- "CORD19v4_R/output/CORD19id_date_v4.csv"
 # write to csv for next matching step (will be final location)
 write_csv(CORD19id_date, filename3)
 # read file for processing at later time

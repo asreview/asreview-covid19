@@ -122,7 +122,7 @@ CORD19id_date <- mergeDate(CORD19id_date)
 #count <- CORD19id_date %>%
 #  filter(is.na(date))
 
-filename3 <- "CORD19v5_R/output/CORD19id_date.csv"
+filename3 <- "CORD19v5_R/output/CORD19id_date_v5.csv"
 # write to csv
 write_csv(CORD19id_date, filename3)
 # read file for processing at later time

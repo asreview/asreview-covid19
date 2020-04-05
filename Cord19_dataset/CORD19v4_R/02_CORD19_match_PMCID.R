@@ -118,7 +118,7 @@ CORD19id_date <- joinDate(CORD19id_date, pmcid_date)
 CORD19id_date <- mergeDate(CORD19id_date)
 
 
-filename3 <- "CORD19v4_R/output/CORD19id_date.csv"
+filename3 <- "CORD19v4_R/output/CORD19id_date_v4.csv"
 # write to csv
 write_csv(CORD19id_date, filename3)
 # read file for processing at later time
