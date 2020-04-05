@@ -106,10 +106,8 @@ CORD19_201912 <- CORD19full_date %>%
   select(-subset)
 #n= 4001
 
-filename2 <- "CORD19v5_R/output/CORD19_201912.csv"
-write.csv(CORD19_201912, filename2, row.names = FALSE)
-
-#for push to ASReview, also write as cord19_v5_20191201.csv
+filename2 <- "CORD19v5_R/output/cord19_v5_20191201.csv"
+write_csv(CORD19_201912, filename2)
 
 
 

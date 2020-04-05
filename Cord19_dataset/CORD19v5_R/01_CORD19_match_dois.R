@@ -151,5 +151,5 @@ write_csv(CORD19id_date, filename3)
 #                                                       pubmed_id = col_character()))
 
 #remove temporary input file 
-filename <- "CORD19v4_R/data/CORD19id.csv"
+filename <- "CORD19v5_R/data/CORD19id.csv"
 unlink(filename)

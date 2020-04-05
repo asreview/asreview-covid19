@@ -1,4 +1,4 @@
-#Add dates to CORD19 dataset (v4 dd 20200321)
+#Add dates to CORD19 dataset (v5 dd 20200327)
 
 #info on CORD19 dataset:
 #https://pages.semanticscholar.org/coronavirus-research
@@ -70,7 +70,7 @@ filename <- "CORD19v5_R/data/CORD19id.csv"
 # write to csv for later use in matching
 write_csv(CORD19id, filename)
 # read file for processing at later time
-#CORD19id2 <- read_csv(filename, 
+#CORD19id <- read_csv(filename, 
 #                  col_types = cols(pmcid = col_character(),
 #                                   pubmed_id = col_character()))
 
