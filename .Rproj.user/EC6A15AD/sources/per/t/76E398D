@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1585991931901.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "151568067",
+    "id" : "76E398D",
+    "lastKnownWriteTime" : 1585991939,
+    "last_content_update" : 1585991939989,
+    "path" : "C:/Users/Bianca/Dropbox/2015 InnoScholComm/R scripts/COVID19/asreview-covid19-fork/Cord19_dataset/README.md",
+    "project_path" : "Cord19_dataset/README.md",
+    "properties" : {
+        "cursorPosition" : "36,77",
+        "scrollLine" : "25"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
