@@ -9,7 +9,7 @@ class Cord19Dataset(BaseDataSet):
     topic = "Covid-19"
     license = "Covid dataset license"
     link = "https://pages.semanticscholar.org/coronavirus-research"
-    last_update = "2020-03-27"
+    last_update = "2020-04-03"
     description = "A free dataset on publications on the corona virus."
     img_url = ("https://pages.semanticscholar.org/hs-fs/hubfs/"
                "covid-image.png?width=300&name=covid-image.png")
@@ -17,30 +17,30 @@ class Cord19Dataset(BaseDataSet):
     year = 2020
 
 
-class Cord19DatasetV5(Cord19Dataset):
-    dataset_id = "cord19-v5"
-    title = "CORD-19 v5"
-    date = "2020-03-27"
+class Cord19DatasetV6(Cord19Dataset):
+    dataset_id = "cord19-v6"
+    title = "CORD-19 v6"
+    date = "2020-04-03"
     statistics = {
-        "n_papers": 45774,
-        "n_missing_titles": 157,
-        "n_missing_abstracts": 7861,
+        "n_papers": 47298,
+        "n_missing_titles": 158,
+        "n_missing_abstracts": 8250,
     }
-    url = ("https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv")  # noqa
-    sha512 = ("a6d8e7a4dd3f0194840129b7368fd97354b44a44fc0d06addfc9a27f3c08e19ef88ff568effb92994895353f7e9d771932f354bd619ee2242d4262f7561f41fe")  # noqa
+    url = ("https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-03/metadata.csv")  # noqa
+    sha512 = ("5ba3738e603e2b23c403a46fb2620360415ba3419b09b071f5a5ca16a96422aa78a5456cba7abb18279b6510174273694961b72c28006620c7f28571125cfae2")  # noqa
 
 
-class Cord19DatasetV5_Dec2019(Cord19Dataset):
-    dataset_id = "cord19-v5-2020"
+class Cord19DatasetV6_Dec2019(Cord19Dataset):
+    dataset_id = "cord19-v6-2020"
     title = "CORD-19 v5 since Dec. 2019"
-    last_update = "2020-03-27"
+    last_update = "2020-04-03"
     statistics = {
-        "n_papers": 4001,
-        "n_missing_titles": 1,
-        "n_missing_abstracts": 877,
+        "n_papers": 4774,
+        "n_missing_titles": 2,
+        "n_missing_abstracts": 1103,
     }
-    date = "2020-03-30"
-    url = ("https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_v5_20191201.csv")  # noqa
+    date = "2020-04-05"
+    url = ("https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_v6_20191201.csv")  # noqa
     sha512 = ("390c04b690abff2f824ed837367048308c6573032b2e45301056c3cfa7b04e6ea5b00ebd691e1af2066a820335bea1bdad240df736bd69be0b3c436fca629759")  # noqa
 
 
@@ -50,6 +50,6 @@ class Covid19DataGroup(BaseDataGroup):
 
     def __init__(self):
         super(Covid19DataGroup, self).__init__(
-            Cord19DatasetV5(),
-            Cord19DatasetV5_Dec2019(),
+            Cord19DatasetV6(),
+            Cord19DatasetV6_Dec2019(),
         )

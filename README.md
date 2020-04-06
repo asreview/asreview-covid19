@@ -8,7 +8,7 @@ The Active learning for Systematic Reviews software [ASReview](https://github.co
 To help combat the COVID-19 crisis, the ASReview team released an extension that integrates the latest scientific datasets on COVID-19 in the ASReview software.
 
 ## CORD-19 dataset
-The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is a dataset with scientific publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications, the preprint servers bioRxiv and medRxiv and papers contributed by specific publishers (currently Elsevier). The dataset is compiled and maintained by a collaboration of the Allen Institute for AI, the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health. Version 5 of the dataset ([csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv), dated March 27, 2020) contains metadata of 45.8K publications on COVID-19 and coronavirus-related research. The CORD-19 dataset is updated weekly. 
+The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is a dataset with scientific publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications, the preprint servers bioRxiv and medRxiv and papers contributed by specific publishers (currently Elsevier). The dataset is compiled and maintained by a collaboration of the Allen Institute for AI, the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health. Version 6 of the dataset ([csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-03/metadata.csv), dated April 3, 2020) contains metadata of 47.3K publications on COVID-19 and coronavirus-related research. The CORD-19 dataset is updated weekly. 
 
 ## ASReview plugin
 
@@ -18,7 +18,7 @@ Two versions of the CORD-19 dataset (publications relating to COVID-19) are made
 - full CORD-19 dataset
 - CORD-19 dataset with publications from December 2019 onwards
 
-The current datasets are based on **CORD-19 version 5 (released 2020-03-27)**
+The current datasets are based on **CORD-19 version 6 (released 2020-04-03)**
 
 The datasets are updated in ASReview plugin shortly after the release by the Allen Institute for AI. 
 
