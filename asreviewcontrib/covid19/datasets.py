@@ -27,7 +27,6 @@ class Cord19DatasetV7(Cord19Dataset):
         "n_missing_abstracts": 8726,
     }
     url = ("https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-10/metadata.csv")  # noqa
-    sha512 = ("5ba3738e603e2b23c403a46fb2620360415ba3419b09b071f5a5ca16a96422aa78a5456cba7abb18279b6510174273694961b72c28006620c7f28571125cfae2")  # noqa
 
 
 class Cord19DatasetV7_Dec2019(Cord19Dataset):
@@ -41,7 +40,6 @@ class Cord19DatasetV7_Dec2019(Cord19Dataset):
     }
     date = "2020-04-14"
     url = ("https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_v7_20191201.csv")  # noqa
-    sha512 = ("390c04b690abff2f824ed837367048308c6573032b2e45301056c3cfa7b04e6ea5b00ebd691e1af2066a820335bea1bdad240df736bd69be0b3c436fca629759")  # noqa
 
 
 class Covid19DataGroup(BaseDataGroup):
