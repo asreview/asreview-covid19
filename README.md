@@ -18,7 +18,7 @@ Two versions of the CORD-19 dataset (publications relating to COVID-19) are made
 - full CORD-19 dataset
 - CORD-19 dataset with publications from December 2019 onwards
 
-The current datasets are based on **CORD-19 version 6 (released 2020-04-03)**
+The current datasets are based on **CORD-19 version 7 (released 2020-04-10)**
 
 The datasets are updated in ASReview plugin shortly after the release by the Allen Institute for AI. 
 
