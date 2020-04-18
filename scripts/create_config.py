@@ -63,8 +63,14 @@ def create_2020_configs():
         create_config(*data)
 
     index_fp = Path("..", "config", "cord19-2020", "index.json")
+    meta_data = {
+        "title": "CORD-19",
+        "base_id": "cord19-2020",
+        "type": "versioned",
+        "filenames": [x[0].stem + ".json" for x in datasets],
+    }
     with open(index_fp, "w") as f:
-        json.dump([x[0].stem + ".json" for x in datasets], f, indent=4)
+        json.dump(meta_data, f, indent=4)
 
 
 def create_complete_configs():
@@ -91,10 +97,25 @@ def create_complete_configs():
         create_config(data_fp, last_update=last_update, complete=True, url=url)
 
     index_fp = Path("..", "config", "cord19-all", "index.json")
+
+    meta_data = {
+        "title": "CORD-19",
+        "base_id": "cord19",
+        "type": "versioned",
+        "filenames": [x for x in data_names],
+    }
     with open(index_fp, "w") as f:
-        json.dump([x for x in data_names], f, indent=4)
+        json.dump(meta_data, f, indent=4)
+
+
+def create_index():
+    meta_data = ["cord19-2020", "cord19-all"]
+    index_fp = Path("..", "config", "index.json")
+    with open(index_fp, "w") as f:
+        json.dump(meta_data, f)
 
 
 if __name__ == "__main__":
     create_2020_configs()
     create_complete_configs()
+    create_index()
