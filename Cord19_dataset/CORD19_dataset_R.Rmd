@@ -1,56 +1,56 @@
 ---
 title: "CORD19 dates"
 author: "Bianca Kramer, for ASReview"
-date: "April 14, 2020"
+date: "April 18, 2020"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 Retrieved dates for DOIs ('date created') and PMCID ('date first published') for records in CORD19 dataset that do not have date in proper format
 
-CORD19 retrieved from: [https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-10/metadata.csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-10/metadata.csv)  
-Version of CORD19 used: 20200410 (v7)  
-Date of sampling: 20200413
+CORD19 retrieved from: [https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-17/metadata.csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-17/metadata.csv)  
+Version of CORD19 used: 20200417 (v8)  
+Date of sampling: 20200417
 
 Scripts in:
 [CORD19_processing_R](/CORD19_processing_R) [_fix path display_]
 
-Results files:
-[CORD19v7_R/output/CORD19id_date_v7.csv](/CORD19v7_R/output/CORD19id_date_v7.csv)  [_fix path display_]  
-(source, publication ids, date)
+Results files:  
+[CORD19v8_R/output/CORD19id_date_v8.csv](/CORD19v8_R/output/CORD19id_date_v8.csv)  [_fix path display_]  
+(cord_uid, source, publication ids, date)
 
-[CORD19v6_R/output/cord19_v7_20191201.csv](/CORD19v7_R/output/cord19_v7_20191201.csv)  [_fix path display_]  
-(source, publication ids, date)
+[CORD19v8_R/output/cord19_v8_20191201.csv](/CORD19v8_R/output/cord19_v8_20191201.csv)  [_fix path display_]  
+(cord_uid, source, publication ids, date)
 
 ## Workflow
 
 0. **Get ids from CORD19 dataset**
-    + download CORD19 [n = 51,078] 
+    + download CORD19 [n = 52,398] 
       + (NB specify date format for publish_time, this will only retrieve dates that are in standard format)
-    + keep columns for cord_uid, source, doi, pmcid, pmid, publish_time [n = 51,078]
-    + check duplicate* [n = 51,078] <- no duplicate records
+    + keep columns for cord_uid, source, doi, pmcid, pmid, publish_time
+    + check duplicate* [n = 52,398] <- no duplicate records (with this of variables)
 1. **For records without proper date format that have DOIs, get date created from Crossref API**
-    + select records without date in proper format [n = 2116]
-    + of these, select records with DOIs [n = 1610]
-    + retrieve data from Crossref [n = 1419]
+    + select records without date in proper format [n = 2161]
+    + of these, select unique records with DOIs [n = 1609]
+    + retrieve data from Crossref [n = 1421]
       + (NB notation of dois from CORD19 v4 onwards is harmonized)
     + match dates back to CORD19 ID data 
       + (NB for match, use lowercase for both sets of dois)
 2. **For remaining records with PMCID, get date first published from EuropePMC API**
-    + select remaining records without date in proper format* [n = 741]
+    + select remaining records without date in proper format* [n = 739]
     + of these, select records with PMCID [n = 258]
-    + retrieve data from EuropePMC [n = 256]
+    + retrieve data from EuropePMC [n = 258]
     + match dates back to CORD19 ID data
 3. **Analyze remaining records**
-    + select remaining records without date in proper format* [n = 483]
-    + of these, select records with PMID [n= 163] <- do NOT pursue at this time)
+    + select remaining records without date in proper format* [n = 481]
+    + of these, select records with PMID [n= 161] <- do NOT pursue at this time)
 4. **Create CORD-19 subset by date**
-    + + download CORD19 [n = 51,078] 
+    + + download CORD19 [n = 52,398] 
       + (NB specify character format for publish_time, this will retrieve dates that are in standard format)
     + copy column 'publish_time' into column 'date' as date format, (this will only keep dates that are in standard format)
     + match retrieved dates by doi, pmcid and pmid
-    + filter on records with date >= 2019-12-01, or publish_time == 2020 [n = 5753]
+    + filter on records with date >= 2019-12-01, or publish_time == 2020 [n = 6898]
 
 *This includes records without DOI, and records where DOI data was not retrieved from Crossref
 
@@ -67,7 +67,7 @@ library(lubridate)
 Read file with matched dates
 ```{r}
 CORD19id_date <- read_csv(
-  "CORD19v7_R/output/CORD19id_date_v7.csv",
+  "CORD19v8_R/output/CORD19id_date_v8.csv",
   col_types = cols(pmcid = col_character(),
                    pubmed_id = col_character())
   )
@@ -122,6 +122,8 @@ ggplot(data=ave_month, aes(x=year, y=month)) +
 
 3. Add missing abstracts from open sources
 
-4. Analyze publisher-added content to PMC
+
+
+
 
   
