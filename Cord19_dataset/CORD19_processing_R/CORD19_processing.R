@@ -1,6 +1,6 @@
 #Add dates to CORD19 dataset (missing and/or non-formatted dates)
 #Create subset of records from Dec 2019 onwards
-#Current version: v7 dd 20200410
+#Current version: v8 dd 20200417
 
 #info on CORD19 dataset:
 #https://pages.semanticscholar.org/coronavirus-research
@@ -32,12 +32,24 @@ file.edit("~/.Renviron")
 #url5 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv"
 #url6 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-03/metadata.csv"
 #url7 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-10/metadata.csv"
+#url8 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-17/metadata.csv"
 
 #set current version number and url
-version <- 7
-url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-10/metadata.csv"
+version <- 8
+url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-17/metadata.csv"
 
+#--------------------------------------------------
+#create folders for new version
+  
+mainDir <- paste0("./CORD19v", version, "_R/")
+subDir <- c("data", "output")
 
+paths <- map_chr(subDir, ~paste0(mainDir,.))
+for (i in 1:length(paths)){
+  dir.create(paths[i], recursive = TRUE)
+} 
+
+#---------------------------------------------
 
 #inspect first lines of full dataset to view columns
 #CORD19 <- seeCORDfull(url)
@@ -46,24 +58,38 @@ url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-1
 #read selected columns (uid, source, ids, date)
 #warnings on date column are expected, only properly formatted dates are included 
 CORD19id <- getCORDid(url)
-#51078 records 
+
+#create dataframe to collect counts
+counts <- data.frame(total = nrow(CORD19id))
+counts$total_depup <- nrow(distinct(CORD19id))
 
 #------------------------------------------------------
 
 #for records without proper date, extract dois as character vector
+
+missing_date <- CORD19id %>%
+  filter(is.na(publish_time))
+counts$missing1 <- nrow(missing_date)
+
 doi_list <- CORD19id %>%
   filter(is.na(publish_time)) %>%
   filter(!is.na(doi)) %>%
-  pull(doi) %>%
+  pull(doi)
+
+counts$doi_list <- length(doi_list)
+
+doi_list <- doi_list %>%
   unique() 
-#1610 dois, 1609 unique
+
+counts$doi_unique <- length(doi_list)
 
 #get created date from Crossref for dois
 #runtime appr. 1 m per 100 dois, progress bar is shown
 doi_date <- getCrossref(doi_list)
 doi_date <- formatDateCrossref(doi_date)
 doi_date <- distinct(doi_date)
-#1419 retrieved
+
+counts$doi_retrieved <- nrow(doi_date)
 
 filename <- paste0("CORD19v",
                    version,
@@ -87,12 +113,23 @@ rm(doi_date, doi_list)
 #------------------------------------------------------------
 
 #for records without proper date, extract pmcids as character vector
+
+missing_date <- CORD19id_date %>%
+  filter(is.na(date))
+
+counts$missing2 <- nrow(missing_date)
+
 pmcid_list <- CORD19id_date %>%
   filter(is.na(date)) %>%
   filter(!is.na(pmcid)) %>%
-  pull(pmcid) %>%
+  pull(pmcid) 
+
+counts$pmcid_list <- length(pmcid_list)
+
+pmcid_list <- pmcid_list %>%
   unique() 
-#258 pmcids
+
+counts$pmcid_list_unique <- length(pmcid_list)
 
 #set parameter for progress bar
 pb <- progress_estimated(length(pmcid_list))
@@ -106,7 +143,8 @@ rm(pb)
 #extract data and format date
 #warning if columns are not included in ePMC output
 pmcid_date <- extractDataEuropePMC(pmcid_date)
-#258 records
+
+counts$pmcid_retrieved <- nrow(pmcid_date)
 
 filename <- paste0("CORD19v",
                    version,
@@ -116,24 +154,21 @@ filename <- paste0("CORD19v",
 # write to csv for later use in matching
 write_csv(pmcid_date, filename)
 
-
 #join dates to list of ids
 CORD19id_date <- joinDateEuropePMC(CORD19id_date, pmcid_date)
 rm(pmcid_date, pmcid_list)
 
-
-
 #merge dates for doi and pmcid
 CORD19id_date <- mergeDate(CORD19id_date)
 
-
 #check still missing dates
-count <- CORD19id_date %>%
-  filter(is.na(date)) %>%
-#  filter(!is.na(pubmed_id))
-#rm(count)
-#483 without proper date
-#163 with pmid
+missing_date <- CORD19id_date %>%
+  filter(is.na(date)) 
+counts$missing3 <- nrow(missing_date)
+
+missing_date <- missing_date %>%
+  filter(!is.na(pubmed_id))
+counts$missing_with_pmid <- nrow(missing_date)
 
 filename <- paste0("CORD19v",
                    version,
@@ -164,15 +199,6 @@ CORD19full <- read_csv(url,
 CORD19full_date <- CORD19full %>%
   mutate(date = as.Date(publish_time))
 
-#get counts of all non-NAs per column 
-count_all <- CORD19full_date %>%
-  summarise_all(~ sum(!is.na(.)))
-
-count_id_date <- CORD19id_date %>%
-  summarise_all(~ sum(!is.na(.)))
-
-rm(count_all, count_id_date)
-
 
 #map date from CORD19_id_date, for DOI and PMCID
 CORD19full_date <- CORD19full_date %>%
@@ -180,11 +206,11 @@ CORD19full_date <- CORD19full_date %>%
   joinPMCID(CORD19id_date) %>%
   distinct()
 
-#test count (expected 483)
-count <- CORD19full_date2 %>%
+#missing counts
+missing_date <- CORD19full_date %>%
   filter(is.na(date))
-#n= 483 
-rm(count)
+counts$missing4 <- nrow(missing_date)
+rm(missing_date)
 
 #create subset from 20191201
 CORD19_201912 <- CORD19full_date %>%
@@ -194,7 +220,8 @@ CORD19_201912 <- CORD19full_date %>%
     TRUE ~ FALSE)) %>%
   filter(subset == TRUE) %>%
   select(-subset) 
-#n= 5753
+
+counts$subset <- nrow(CORD19_201912)
 
 
 filename <- paste0("CORD19v",
@@ -204,14 +231,20 @@ filename <- paste0("CORD19v",
                    "_20191201.csv")
 write_csv(CORD19_201912, filename)
 
+#pivot counts
+counts <- counts %>%
+  pivot_longer(everything(), names_to = "parameter")
+
 #----------------------------------------------------------
 #for ASReview, get number of missing titles/abstracts
-#rewrite as function with one output
+#to rewrite as function with one output
 
 count_abs_full <- CORD19full %>%
-  select(title, abstract) %>%
+  select(version, title, abstract) %>%
   summarise_all(~ sum(is.na(.)))
 
 count_abs_subset <- CORD19_201912 %>%
   select(title, abstract) %>%
   summarise_all(~ sum(is.na(.)))
+
+#-------------------------------------------------------------
