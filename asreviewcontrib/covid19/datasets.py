@@ -24,9 +24,10 @@ class Covid19DataGroup(BaseDataGroup):
     description = "A Free dataset on publications on the corona virus."
 
     def __init__(self):
-        base_url = "https://raw.githubusercontent.com/asreview/asreview-covid19/master/config"
+        base_url = "https://raw.githubusercontent.com/qubixes/asreview-covid19/finalize-dynamic/config"
         base_index = base_url + "/index.json"
         datasets = []
+        print(base_index)
         with urlopen(base_index) as f:
             dir_list = json.loads(f.read().decode())
         for dir_ in dir_list:
