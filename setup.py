@@ -15,6 +15,12 @@ for line in open(path.join("asreviewcontrib", "covid19", "__init__.py")):
         exec(line)
         break
 
+DEPS = {
+    "config-create": "asreview-statistics",
+}
+
+DEPS['all'] = DEPS["config-create"]
+
 setup(
     name='asreview-covid19',
     version=__version__,  # noqa
@@ -44,11 +50,10 @@ setup(
     packages=find_namespace_packages(include=['asreviewcontrib.*']),
     namespace_package=["asreview"],
     install_requires=[
-        "asreview>=0.7.0",
+        "asreview>0.8.9",
     ],
 
-    extras_require={
-    },
+    extras_require=DEPS,
 
     entry_points={
         "asreview.datasets": [

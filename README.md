@@ -18,7 +18,7 @@ Two versions of the CORD-19 dataset (publications relating to COVID-19) are made
 - full CORD-19 dataset
 - CORD-19 dataset with publications from December 2019 onwards
 
-The current datasets are based on **CORD-19 version 6 (released 2020-04-03)**
+The current datasets are based on **CORD-19 version 7 (released 2020-04-10)**
 
 The datasets are updated in ASReview plugin shortly after the release by the Allen Institute for AI. 
 
@@ -40,7 +40,7 @@ asreview oracle
 
 The datasets are selectable in Step 2 of the project initialization. For more information on the usage of ASReview, please have a look at the [Quick Tour](https://asreview.readthedocs.io/en/latest/quicktour.html). 
 
-[![ASReview CORD19 datasets](https://github.com/asreview/asreview/blob/master/images/asrewiew-plugin-cord19-dataset.png?raw=true)](https://github.com/asreview/asreview-covid19)
+[![ASReview CORD19 datasets](https://github.com/asreview/asreview/blob/master/images/asreview-covid19-screenshot.png?raw=true)](https://github.com/asreview/asreview-covid19)
 
 ## License and contact
 
