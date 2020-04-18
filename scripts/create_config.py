@@ -65,7 +65,7 @@ def create_2020_configs():
     index_fp = Path("..", "config", "cord19-2020", "index.json")
     meta_data = {
         "title": "CORD-19",
-        "base_id": "cord19",
+        "base_id": "cord19-2020",
         "type": "versioned",
         "filenames": [x[0].stem + ".json" for x in datasets],
     }

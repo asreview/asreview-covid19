@@ -33,6 +33,8 @@ class Covid19DataGroup(BaseDataGroup):
         for dir_ in dir_list:
             url = base_url + "/" + dir_
             datasets.append(dataset_from_url(url))
+        for data in datasets:
+            print(data)
         super(Covid19DataGroup, self).__init__(
             *datasets
         )
