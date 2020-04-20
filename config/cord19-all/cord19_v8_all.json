@@ -9,9 +9,9 @@
     "link": "https://pages.semanticscholar.org/coronavirus-research",
     "last_update": "2020-04-17",
     "statistics": {
-        "n_papers": 51078,
+        "n_papers": 52398,
         "n_missing_title": 158,
-        "n_missing_abstract": 8726
+        "n_missing_abstract": 9230
     },
     "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
     "license": "Covid dataset license",
