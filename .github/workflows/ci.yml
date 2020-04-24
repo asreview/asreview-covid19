@@ -13,6 +13,7 @@ jobs:
     - name: Install packages
       run: |
         pip install .
+        pip install pytest
     - name: Test packages
       run: |
         pytest tests
