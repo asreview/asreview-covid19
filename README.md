@@ -42,9 +42,13 @@ The datasets are selectable in Step 2 of the project initialization. For more in
 
 [![ASReview CORD19 datasets](https://github.com/asreview/asreview/blob/master/images/asreview-covid19-screenshot.png?raw=true)](https://github.com/asreview/asreview-covid19)
 
-## License and contact
+## License, citation and contact
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3764749.svg)](https://doi.org/10.5281/zenodo.3764749) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 The ASReview software and the plugin have an Apache 2.0 LICENSE. For the datasets, please see the license of the CORD-19 dataset https://pages.semanticscholar.org/coronavirus-research. 
+
+Visit https://doi.org/10.5281/zenodo.3764749 to get the citation style of your preference. 
 
 This project is coordinated by by Rens van de Schoot (@Rensvandeschoot) and Daniel Oberski (@daob) and is part of the research work conducted by the Department of Methodology & Statistics, Faculty of Social and Behavioral Sciences, Utrecht University, The Netherlands. Maintainers are Jonathan de Bruin (@J535D165) and Raoul Schram (@qubixes).
 
