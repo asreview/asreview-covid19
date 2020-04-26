@@ -8,7 +8,7 @@ The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is
 
 The most recent version of the dataset can be downloaded here:  
 [https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv).  
-All previous versions are archived on [Zenodo](https://doi.org/10.5281/zenodo.3715505). 
+All versions are archived on [Zenodo](https://doi.org/10.5281/zenodo.3715505). 
 
 Version 9 of the dataset (dated April 24, 2020) contains metadata of 57.4K publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications,  the preprint servers bioRxiv and medRxiv and papers contributed by specific publishers (currently Elsevier).
 
