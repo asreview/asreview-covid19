@@ -216,12 +216,15 @@ write(json_subset, filepath_version_subset)
 #one time modification to update urls for versions of full dataset to Zenodo
 #version 3-8
 
+#version <- 8
+#url <- url8
 
-version <- 
-url <- 
-
-filepath_version_all <- paste0("../config/cord19-all/cord19_v",
-                                version,
-                                "_all.json")
-
-json_all <- fromJSON(filepath_version_all)
+#filepath_version_all <- paste0("../config/cord19-all/cord19_v",
+#                                version,
+#                                "_all.json")
+#
+#json_all <- fromJSON(filepath_version_all)
+#json_all$url <- url
+#json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
+#
+#write(json_all, filepath_version_all)
