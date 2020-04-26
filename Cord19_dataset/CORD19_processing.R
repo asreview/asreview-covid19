@@ -144,8 +144,8 @@ filepath_latest_subset <- "../config/cord19-2020/cord19_latest_20191201.json"
 json_full <- fromJSON(filepath_latest_full)
 json_subset <- fromJSON(filepath_latest_subset)
 
-#json_full_old <- json_full
-#json_subset_old <- json_subset
+json_full_old <- json_full
+json_subset_old <- json_subset
 
 #---------------------------------------------------------------
 #one time modification
