@@ -33,6 +33,8 @@ file.edit("~/.Renviron")
 #make modifying json files into function to call
 #wait until after everything is confirmed to work well!
 
+#make statistics.json into nested list with elements for each version
+
 
 #----------------------------------------------------
 #URLs for CORD19 dataset
@@ -133,6 +135,13 @@ write_csv(CORD19_201912, filename)
 
 #collect statistics for ASReview for full set and subset
 statistics <- getStats(CORD19, CORD19_201912)
+
+#save and write as json
+statistics_json <- toJSON(statistics, pretty = TRUE, auto_unbox = TRUE)
+filepath_statistics <- "output/statistics.json"
+write(json_all, filepath_statistics)
+
+#to do: make this into a list with elements for each subsequent version
 
 #-------------------------------------------------------------
 
