@@ -26,7 +26,8 @@ This subset is available as a separate dataset [cord19_latest_20191201.csv](../d
 
 ## Script and updates
 
-The script used for the workflow described here can be found at: [CORD19_processing.R](CORD19_processing.R)
+The script used for the workflow described here:  
+[CORD19_processing.R](CORD19_processing.R)
 
 The CORD-19 dataset is updated weekly. The modified datasets described here will be updated shortly after.  
 The current datasets are based on **CORD-19 version 9 (released 2020-04-24)**
