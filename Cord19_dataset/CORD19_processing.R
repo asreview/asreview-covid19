@@ -31,6 +31,7 @@ file.edit("~/.Renviron")
 #STILL TO DO
 
 #make modifying json files into function to call
+#wait until after everything is confirmed to work well!
 
 
 #----------------------------------------------------
@@ -148,15 +149,82 @@ json_full_old <- json_full
 json_subset_old <- json_subset
 
 #---------------------------------------------------------------
-#one time modification
+#one time modification to change fixed elements of 'latest' json files
+
+#json_full$dataset_id <- "cord19-latest"
+#json_full$title <- "CORD-19 latest"
+#json_full$url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
+
+#json_subset$dataset_id <- "cord19-2020-latest"
+#json_subset$title <- "CORD-19 latest since Dec. 2019"
+#json_subset$url <- "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_latest_20191201.csv"
+
+#json_full <- toJSON(json_full, pretty = TRUE, auto_unbox = TRUE)
+#json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
+
+#write(json_full, filepath_latest_full)
+#write(json_subset, filepath_latest_subset)
+
+
+#-----------------------------------------------------------------------------------
+#update info to latest version using data in 'statistics'
+
+json_full$last_update <- last_update
+json_full$statistics$n_papers <- statistics$full$n_papers
+json_full$statistics$n_missing_title <- statistics$full$n_missing_title
+json_full$statistics$n_missing_abstract <- statistics$full$n_missing_abstract
+
+json_subset$last_update <- last_update
+json_subset$statistics$n_papers <- statistics$subset$n_papers
+json_subset$statistics$n_missing_title <- statistics$subset$n_missing_title
+json_subset$statistics$n_missing_abstract <- statistics$subset$n_missing_abstract 
+
+
+json_full <- toJSON(json_full, pretty = TRUE, auto_unbox = TRUE)
+json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
+
+write(json_full, filepath_latest_full)
+write(json_subset, filepath_latest_subset)
+
+#-----------------------------------------------------------------
+#create version-specific json-files
+
 json_full$dataset_id <- "cord19-latest"
 json_full$title <- "CORD-19 latest"
+json_full$url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
 
 json_subset$dataset_id <- "cord19-2020-latest"
 json_subset$title <- "CORD-19 latest since Dec. 2019"
+json_subset$url <- "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_latest_20191201.csv"
 
-json_full <- toJSON(json_full, pretty = TRUE)
-json_subset <- toJSON(json_subset, pretty = TRUE)
+json_full <- toJSON(json_full, pretty = TRUE, auto_unbox = TRUE)
+json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
+
+
+
+
+
+
+
+write(json_full, filepath_latest_full)
+write(json_subset, filepath_latest_subset)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+json_full <- toJSON(json_full, pretty = TRUE, auto_unbox = TRUE)
+json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
 
 write(json_full, filepath_latest_full)
 write(json_subset, filepath_latest_subset)
