@@ -140,37 +140,37 @@ statistics <- getStats(CORD19, CORD19_201912)
 #NB streamline with functions after it has been confirmed to work in ASReview
 
 #read json files (use 'latest' as basis for updates)
-filepath_latest_full <- "../config/cord19-all/cord19_latest_all.json"
+filepath_latest_all <- "../config/cord19-all/cord19_latest_all.json"
 filepath_latest_subset <- "../config/cord19-2020/cord19_latest_20191201.json"
 
-json_full <- fromJSON(filepath_latest_full)
+json_all <- fromJSON(filepath_latest_all)
 json_subset <- fromJSON(filepath_latest_subset)
 
 #---------------------------------------------------------------
 #one time modification to change fixed elements of 'latest' json files
 
-#json_full$dataset_id <- "cord19-latest"
-#json_full$title <- "CORD-19 latest"
-#json_full$url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
+#json_all$dataset_id <- "cord19-latest"
+#json_all$title <- "CORD-19 latest"
+#json_all$url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
 
 #json_subset$dataset_id <- "cord19-2020-latest"
 #json_subset$title <- "CORD-19 latest since Dec. 2019"
 #json_subset$url <- "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_latest_20191201.csv"
 
-#json_full <- toJSON(json_full, pretty = TRUE, auto_unbox = TRUE)
+#json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
 #json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
 
-#write(json_full, filepath_latest_full)
+#write(json_all, filepath_latest_all)
 #write(json_subset, filepath_latest_subset)
 
 
 #-----------------------------------------------------------------------------------
 #update info to latest version using data in 'statistics'
 
-json_full$last_update <- last_update
-json_full$statistics$n_papers <- statistics$full$n_papers
-json_full$statistics$n_missing_title <- statistics$full$n_missing_title
-json_full$statistics$n_missing_abstract <- statistics$full$n_missing_abstract
+json_all$last_update <- last_update
+json_all$statistics$n_papers <- statistics$all$n_papers
+json_all$statistics$n_missing_title <- statistics$all$n_missing_title
+json_all$statistics$n_missing_abstract <- statistics$all$n_missing_abstract
 
 json_subset$last_update <- last_update
 json_subset$statistics$n_papers <- statistics$subset$n_papers
@@ -178,18 +178,18 @@ json_subset$statistics$n_missing_title <- statistics$subset$n_missing_title
 json_subset$statistics$n_missing_abstract <- statistics$subset$n_missing_abstract 
 
 
-json_full <- toJSON(json_full, pretty = TRUE, auto_unbox = TRUE)
+json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
 json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
 
-write(json_full, filepath_latest_full)
+write(json_all, filepath_latest_all)
 write(json_subset, filepath_latest_subset)
 
 #-----------------------------------------------------------------
 #modify 'latest' version to create version-specific json-files
 
-json_full$dataset_id <- paste0("cord19-v", version)
-json_full$title <- paste0("CORD-19 v", version)
-json_full$url <- url
+json_all$dataset_id <- paste0("cord19-v", version)
+json_all$title <- paste0("CORD-19 v", version)
+json_all$url <- url
 
 json_subset$dataset_id <- paste0("cord19-2020-v", version)
 json_subset$title <- paste0("CORD-19 v", version, " since Dec. 2019")
@@ -197,10 +197,10 @@ json_subset$url <- paste0("https://raw.githubusercontent.com/asreview/asreview-c
                           version,
                           "_20191201.csv")
 
-json_full <- toJSON(json_full, pretty = TRUE, auto_unbox = TRUE)
+json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
 json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
 
-filepath_version_full <- paste0("../config/cord19-all/cord19_v",
+filepath_version_all <- paste0("../config/cord19-all/cord19_v",
                                 version,
                                 "_all.json")
 filepath_version_subset <- paste0("../config/cord19-2020/cord19_v",
@@ -208,9 +208,16 @@ filepath_version_subset <- paste0("../config/cord19-2020/cord19_v",
                                   "_20191201.json")
 
 
-write(json_full, filepath_version_full)
+write(json_all, filepath_version_all)
 write(json_subset, filepath_version_subset)
 
 
+#--------------------------------------------------------------------
+#one time modification to update urls for versions of full dataset to Zenodo
+#version 3-8
 
+filepath_version_full <- paste0("../config/cord19-all/cord19_v",
+                                version,
+                                "_all.json")
 
+json_all <- fromJSON(filepath_latest_all)
