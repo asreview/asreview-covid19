@@ -14,7 +14,7 @@ Version 9 of the dataset (dated April 24, 2020) contains metadata of 57.4K publi
 
 
 ## Supplemental date information
-Information on publication time in consistent date-format is  available for ~96% of records in the original datasets. The scripts in this repo are used to enrich information on first date of publication, making use of Crossref (for DOIs) and EuropePMC (for PMCIDs) APIs. As a result, date information in standard format is made available for ~99% of all records in the CORD-19 datasets.  
+Information on publication time in consistent date-format is  available for ~95% of records in the original datasets. The scripts in this repo are used to enrich information on first date of publication, making use of Crossref (for DOIs) and EuropePMC (for PMCIDs) APIs. As a result, date information in standard format is made available for ~99% of all records in the CORD-19 datasets.  
 
 ## CORD-19 subset from Dec 2019 onwards
 Using the enriched date information, a subset of the CORD-19 dataset is created containing publications from Dec 2019 onwards (i.e. publication relating to the current COVID-19 outbreak). Date information in standard format is used, as well as originally supplied date information that contains the year 2020. This dataset currently contains 8560 records.

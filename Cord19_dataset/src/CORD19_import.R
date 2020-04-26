@@ -8,22 +8,18 @@ seeCORDfull <- function(url){
   return(df)
 } 
 
-#define function to explore abstracts and date info in CORD19 metadata file 
-#only read selected columns
-#read pmcid as character, not logical
-#reading publish_date as col_date will only import properly formatted dates
-getCORDid <- function(url){
-  df <- read_csv(url,
-                 cols_only(
-                   cord_uid = col_character(),
-                   source_x = col_character(),
-                   doi = col_character(),
-                   pmcid = col_character(),
-                   pubmed_id = col_character(),
-                   #publish_time = col_character())
-                   publish_time = col_date(format = "")),
-                 col_names = TRUE)
-  
+#define function to read full CORD19 metdafile
+#set certain columns as character to read in all values
+#
+getCORDfull <- function(url){
+  df <- read_csv(url, 
+                 col_types = cols(`Microsoft Academic Paper ID` = col_character(), 
+                                  `WHO #Covidence` = col_character(), 
+                                  journal = col_character(), 
+                                  pmcid = col_character(), 
+                                  publish_time = col_character(), 
+                                  pubmed_id = col_character()))
+
   return(df)
 }
 

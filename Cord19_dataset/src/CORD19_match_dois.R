@@ -25,7 +25,6 @@ formatDateCrossref <- function(x){
   return(res)
 }
 
-
 #define function to add date to id list
 joinDateCrossref <- function(x,y){
   res <- x %>%
@@ -34,10 +33,9 @@ joinDateCrossref <- function(x,y){
   res <- res %>%
     rename(doi = `doi.x`) %>%
     select(-c(`doi.y`, doi_lc)) %>%
-    rename(date = publish_time) %>%
-    mutate(date = case_when(
-      is.na(date) ~ created,
-      !is.na(date) ~ date)) %>%
+    mutate(date_post = case_when(
+      is.na(date_post) ~ created,
+      !is.na(date_post) ~ date_post)) %>%
     select(-created)
   
   return(res)

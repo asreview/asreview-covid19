@@ -23,7 +23,7 @@ getEuropePMC_progress <- function(pmcid){
 #prevent error if any variable (esp. doi, pmid) is missing
 extractDataEuropePMC <- function(x){
   res <- x %>%
-    select(one_of(c("pmcid", "pmid", "doi", "firstPublicationDate"))) %>%
+    select(one_of(c("pmcid","firstPublicationDate"))) %>%
     #select(pmcid, pmid, doi, firstPublicationDate) %>%
     mutate(created = as.Date(firstPublicationDate)) %>%
     select(-firstPublicationDate)
@@ -32,34 +32,20 @@ extractDataEuropePMC <- function(x){
 }
 
 
+
 #define function to add date to id list
-#remove doi, pmid columns b/c not needed here
 joinDateEuropePMC <- function(x,y){
-  
-  y <- y %>%
-    select(pmcid, created)
-  
   res <- x %>%
     left_join(y, by = "pmcid")
   
-  return(res)
-  
-}
-  
-
-#define function to merge date columns (doi and pmcid results)
-mergeDate <- function(x){
-  
-  res <- x  %>%
-    mutate(date = case_when(
-      is.na(date) ~ created,
-      !is.na(date) ~ date)) %>%
+  res <- res %>%
+    mutate(date_post = case_when(
+      is.na(date_post) ~ created,
+      !is.na(date_post) ~ date_post)) %>%
     select(-created)
   
   return(res)
 }
 
 
-
-                           
                            
