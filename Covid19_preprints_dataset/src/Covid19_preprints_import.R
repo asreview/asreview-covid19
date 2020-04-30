@@ -30,6 +30,8 @@ readFile <- function(){
                    abstract = col_character()
                  ))
   
+  unlink(file.path(path, file))
+  
   return(df)
   
 }
