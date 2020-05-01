@@ -1,33 +1,30 @@
-# R-scripts to reproduce processing CORD-19 database
+# R-scripts for processing COVID 19 preprints dataset
 
-Two versions of the CORD-19 dataset are made available in ASReview: the full dataset and a dataset with publications from December 2019 onwards.
+## The COVID19 preprints dataset
 
-## The CORD-19 dataset
+The [COVID19 preprints dataset](https://github.com/nicholasmfraser/covid19_preprints) is created by Nicholas Fraser and Bianca Kramer, by collecting metadata of COVID19-related preprints with DOIs registered with Crossref or DataCite, and from arXiv. 
 
-The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is made available through a collaboration of the Allen Institute for AI, the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health. 
+The most recent version of the dataset can be downloaded here (csv):  
+[https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv](https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv).  
+All versions are archived on [Figshare](https://doi.org/10.6084/m9.figshare.12033672). 
 
-The most recent version of the dataset can be downloaded here:  
-[https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv).  
-All versions are archived on [Zenodo](https://doi.org/10.5281/zenodo.3715505). 
+Version 5 of the dataset (dated April 26, 2020) contains metadata of 6.3K preprints related to COVID-19 from > 15 preprint servers.
 
-Version 9 of the dataset (dated April 24, 2020) contains metadata of 57.4K publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications,  the preprint servers bioRxiv and medRxiv and papers contributed by specific publishers (currently Elsevier).
+![Covid19 preprints](https://github.com/nicholasmfraser/covid19_preprints/blob/master/outputs/figures/covid19_preprints_day_cumulative.png)
 
+The dataset contains the following variables:  
 
-## Supplemental date information
-Information on publication time in consistent date-format is  available for ~95% of records in the original datasets. The scripts in this repo are used to enrich information on first date of publication, making use of Crossref (for DOIs) and EuropePMC (for PMCIDs) APIs. As a result, date information in standard format is made available for ~99% of all records in the CORD-19 datasets.  
-
-## CORD-19 subset from Dec 2019 onwards
-Using the enriched date information, a subset of the CORD-19 dataset is created containing publications from Dec 2019 onwards (i.e. publication relating to the current COVID-19 outbreak). Date information in standard format is used, as well as originally supplied date information that contains the year 2020. This dataset currently contains 8560 records.
-
-This subset is available as a separate dataset [cord19_latest_20191201.csv](../datasets/cord19_latest_20191201.csv) containing the following variables:  
-
-* all variables in CORD-19
-* date as retrieved from Crossref and Europe PMC
+* preprint archive
+* doi
+* arxiv_id
+* posted_date
+* title
+* abstract (where available)
 
 ## Script and updates
 
 The script used for the workflow described here:  
-[CORD19_processing.R](CORD19_processing.R)
+[Covid19_preprints_processing.R](Covid19_preprints_processing.R)
 
-The CORD-19 dataset is updated weekly. The modified datasets described here will be updated shortly after.  
-The current datasets are based on **CORD-19 version 9 (released 2020-04-24)**
+The Covid19 preprints dataset is updated weekly and will be made available in ASReview shortly after.  
+The current datasets is **version 5 (released 2020-04-26)**
