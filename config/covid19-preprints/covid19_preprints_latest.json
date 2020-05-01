@@ -5,11 +5,11 @@
   "authors": "Nicholas Fraser and Bianca Kramer",
   "topic": "Covid-19",
   "link": "https://github.com/nicholasmfraser/covid19_preprints",
-  "last_update": "2020-04-05",
+  "last_update": "2020-04-26",
   "statistics": {
-    "n_papers": 2080,
+    "n_papers": 6338,
     "n_missing_title": 0,
-    "n_missing_abstract": 25
+    "n_missing_abstract": 1695
   },
   "img_url": "https://github.com/nicholasmfraser/covid19_preprints/blob/master/outputs/figures/covid19_preprints_day_cumulative.png",
   "license": "CC0",
