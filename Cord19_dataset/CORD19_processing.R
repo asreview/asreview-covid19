@@ -138,7 +138,9 @@ statistics <- getStats(CORD19, CORD19_201912)
 
 #save and write as json
 statistics_json <- toJSON(statistics, pretty = TRUE, auto_unbox = TRUE)
-filepath_statistics <- "output/statistics.json"
+filepath_statistics <- paste0("output/statistics_cord19_v",
+                              version,
+                              ".json")
 write(json_all, filepath_statistics)
 
 #to do: make this into a list with elements for each subsequent version
