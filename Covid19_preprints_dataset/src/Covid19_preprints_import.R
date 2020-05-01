@@ -18,9 +18,9 @@ getFiles <- function(url){
 readFile <- function(){
   path <- "data"
   file <- list.files(path)
-  path <- file.path(path, file, "data/covid19_preprints.csv")
+  path1 <- file.path(path, file, "data/covid19_preprints.csv")
   
-  df <- read_csv(path, 
+  df <- read_csv(path1, 
                  col_types = cols(
                    source = col_character(),
                    doi = col_character(),
@@ -30,7 +30,7 @@ readFile <- function(){
                    abstract = col_character()
                  ))
   
-  unlink(file.path(path, file))
+  unlink(file.path(path, file), recursive = TRUE)
   
   return(df)
   

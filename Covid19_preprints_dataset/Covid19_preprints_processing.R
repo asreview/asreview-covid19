@@ -25,13 +25,13 @@ source("src/Covid19_preprints_get_stats.R")
 
 #----------------------------------------------------
 #URLs for COVID_preprints dataset
-#version number is Figshare version
+#url version number is Figshare version
 #date is date until which dataset is updated
-url7 <- "https://ndownloader.figshare.com/articles/12033672/versions/7" #20200329
-#url8 <- "https://ndownloader.figshare.com/articles/12033672/versions/8" #20200405
-#url10 <- "https://ndownloader.figshare.com/articles/12033672/versions/10" #20200412
-#url12 <- "https://ndownloader.figshare.com/articles/12033672/versions/12" #20200419
-#url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426
+url7 <- "https://ndownloader.figshare.com/articles/12033672/versions/7" #20200329 v1
+#url8 <- "https://ndownloader.figshare.com/articles/12033672/versions/8" #20200405 v2
+#url10 <- "https://ndownloader.figshare.com/articles/12033672/versions/10" #20200412 v3
+#url12 <- "https://ndownloader.figshare.com/articles/12033672/versions/12" #20200419 v4
+#url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426 v5
 
 
 #set current version number and url
@@ -44,6 +44,7 @@ url <- url7
 getFiles(url)
 #read csv file
 df <- readFile()
+
 
 #write as version
 filename <- paste0("../datasets/preprints/covid19_preprints_v",
@@ -80,66 +81,42 @@ filepath_latest_preprints <- "../config/covid19-preprints/covid19_preprints_late
 
 json_preprints <- fromJSON(filepath_latest_preprints)
 
-#---------------------------------------------------------------
-#one time modification to change fixed elements of 'latest' json files
-
-json_old <- json_preprints
-
-json_preprints$dataset_id <- "cord19-latest"
-json_preprints$title <- "CORD-19 latest"
-json_preprints$url <- "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/preprints/covid19_preprints_latest.csv"
-
-#json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
-#json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
-
-#write(json_all, filepath_latest_all)
-#write(json_subset, filepath_latest_subset)
-
 
 #-----------------------------------------------------------------------------------
 #update info to latest version using data in 'statistics'
 
-json_all$last_update <- last_update
-json_all$statistics$n_papers <- statistics$all$n_papers
-json_all$statistics$n_missing_title <- statistics$all$n_missing_title
-json_all$statistics$n_missing_abstract <- statistics$all$n_missing_abstract
-
-json_subset$last_update <- last_update
-json_subset$statistics$n_papers <- statistics$subset$n_papers
-json_subset$statistics$n_missing_title <- statistics$subset$n_missing_title
-json_subset$statistics$n_missing_abstract <- statistics$subset$n_missing_abstract 
+json_preprints$last_update <- last_update
+json_preprints$statistics$n_papers <- statistics$preprints$n_papers
+json_preprints$statistics$n_missing_title <- statistics$preprints$n_missing_title
+json_preprints$statistics$n_missing_abstract <- statistics$preprints$n_missing_abstract
 
 
-json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
-json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
+json_preprints_file <- toJSON(json_preprints, pretty = TRUE, auto_unbox = TRUE)
 
-write(json_all, filepath_latest_all)
-write(json_subset, filepath_latest_subset)
+write(json_preprints_file, filepath_latest_preprints)
+
 
 #-----------------------------------------------------------------
 #modify 'latest' version to create version-specific json-files
 
-json_all$dataset_id <- paste0("cord19-v", version)
-json_all$title <- paste0("CORD-19 v", version)
-json_all$url <- url
+json_old <- json_preprints
 
-json_subset$dataset_id <- paste0("cord19-2020-v", version)
-json_subset$title <- paste0("CORD-19 v", version, " since Dec. 2019")
-json_subset$url <- paste0("https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_v",
-                          version,
-                          "_20191201.csv")
+figshare_url <- paste0("https://doi.org/10.6084/m9.figshare.12033672.v",
+                       figshare_version)
 
-json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
-json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
+json_preprints$dataset_id <- paste0("covid19-preprints-v", version)
+json_preprints$title <- paste0("Covid19 preprints v", version)
+json_preprints$link <- figshare_url
+json_preprints$url <- paste0("https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/preprints/covid19_preprints_v",
+                             version,
+                             ".csv")
 
-filepath_version_all <- paste0("../config/cord19-all/cord19_v",
+json_preprints_file <- toJSON(json_preprints, pretty = TRUE, auto_unbox = TRUE)
+
+filepath_version_preprints <- paste0("../config/covid19-preprints/covid19_preprints_v",
                                version,
-                               "_all.json")
-filepath_version_subset <- paste0("../config/cord19-2020/cord19_v",
-                                  version,
-                                  "_20191201.json")
+                               ".json")
 
 
-write(json_all, filepath_version_all)
-write(json_subset, filepath_version_subset)
+write(json_preprints_file, filepath_version_preprints)
 
