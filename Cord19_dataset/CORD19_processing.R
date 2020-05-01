@@ -209,7 +209,7 @@ write(json_subset, filepath_version_subset)
 
 #update index.json
 
-#read json files (use 'latest' as basis for updates)
+#read json files
 filepath_index_all <- "../config/cord19-all/index.json"
 filepath_index_subset <- "../config/cord19-2020/index.json"
 
