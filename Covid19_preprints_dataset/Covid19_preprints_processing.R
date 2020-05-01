@@ -6,9 +6,9 @@
 #https://doi.org/10.6084/m9.figshare.12033672
 
 #install.packages("tidyverse")
-#install.packages("jsonlite")
-library(tidyverse)
-library(jsonlite)
+#install.paclibrary(tidyverse)
+library(jsonlite)kages("jsonlite")
+
 
 source("src/Covid19_preprints_import.R")
 source("src/Covid19_preprints_get_stats.R")
@@ -99,7 +99,6 @@ write(json_preprints_file, filepath_latest_preprints)
 #-----------------------------------------------------------------
 #modify 'latest' version to create version-specific json-files
 
-json_old <- json_preprints
 
 figshare_url <- paste0("https://doi.org/10.6084/m9.figshare.12033672.v",
                        figshare_version)
@@ -120,3 +119,16 @@ filepath_version_preprints <- paste0("../config/covid19-preprints/covid19_prepri
 
 write(json_preprints_file, filepath_version_preprints)
 
+#------------------------------------------------------------------
+#update index.json
+
+filepath_index_preprints <- "../config/covid19-preprints/index.json"
+json_index_preprints <- fromJSON(filepath_index_preprints)
+
+filenames_preprints <- json_index_preprints$filenames
+filenames_preprints_new <- paste0("covid19_preprints_v", version, ".json")
+filenames_preprints <- append(filenames_preprints, filenames_preprints_new)
+json_index_preprints$filenames <- filenames_preprints
+
+json_index_preprints <- toJSON(json_index_preprints, pretty = TRUE, auto_unbox = TRUE)
+write(json_index_preprints, filepath_index_preprints)
