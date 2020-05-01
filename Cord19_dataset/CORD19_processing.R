@@ -157,23 +157,6 @@ filepath_latest_subset <- "../config/cord19-2020/cord19_latest_20191201.json"
 json_all <- fromJSON(filepath_latest_all)
 json_subset <- fromJSON(filepath_latest_subset)
 
-#---------------------------------------------------------------
-#one time modification to change fixed elements of 'latest' json files
-
-#json_all$dataset_id <- "cord19-latest"
-#json_all$title <- "CORD-19 latest"
-#json_all$url <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
-
-#json_subset$dataset_id <- "cord19-2020-latest"
-#json_subset$title <- "CORD-19 latest since Dec. 2019"
-#json_subset$url <- "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_latest_20191201.csv"
-
-#json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
-#json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
-
-#write(json_all, filepath_latest_all)
-#write(json_subset, filepath_latest_subset)
-
 
 #-----------------------------------------------------------------------------------
 #update info to latest version using data in 'statistics'
@@ -222,20 +205,32 @@ filepath_version_subset <- paste0("../config/cord19-2020/cord19_v",
 write(json_all, filepath_version_all)
 write(json_subset, filepath_version_subset)
 
-
 #--------------------------------------------------------------------
-#one time modification to update urls for versions of full dataset to Zenodo
-#version 3-8
 
-#version <- 8
-#url <- url8
+#update index.json
 
-#filepath_version_all <- paste0("../config/cord19-all/cord19_v",
-#                                version,
-#                                "_all.json")
-#
-#json_all <- fromJSON(filepath_version_all)
-#json_all$url <- url
-#json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
-#
-#write(json_all, filepath_version_all)
+#read json files (use 'latest' as basis for updates)
+filepath_index_all <- "../config/cord19-all/index.json"
+filepath_index_subset <- "../config/cord19-2020/index.json"
+
+json_index_all <- fromJSON(filepath_index_all)
+json_index_subset <- fromJSON(filepath_index_subset)
+
+filenames_all <- json_index_all$filenames
+filenames_subset <- json_index_subset$filenames
+
+filenames_all_new <- paste0("cord19_v", version, "_all.json")
+filenames_subset_new <- paste0("cord19_v", version, "_20191201.json")
+
+filenames_all <- append(filenames_all, filenames_all_new)
+filenames_subset <- append(filenames_subset, filenames_subset_new)
+
+json_index_all$filenames <- filenames_all
+json_index_subset$filenames <- filenames_subset
+
+json_index_all <- toJSON(json_index_all, pretty = TRUE, auto_unbox = TRUE)
+json_index_subset <- toJSON(json_index_subset, pretty = TRUE, auto_unbox = TRUE)
+
+write(json_index_all, filepath_index_all)
+write(json_index_subset, filepath_index_subset)
+
