@@ -24,22 +24,28 @@ source("src/Covid19_preprints_get_stats.R")
 #URLs for COVID_preprints dataset
 #url version number is Figshare version
 #date is date until which dataset is updated
-#url7 <- "https://ndownloader.figshare.com/articles/12033672/versions/7" #20200329 v1
-#url8 <- "https://ndownloader.figshare.com/articles/12033672/versions/8" #20200405 v2
-#url10 <- "https://ndownloader.figshare.com/articles/12033672/versions/10" #20200412 v3
-#url12 <- "https://ndownloader.figshare.com/articles/12033672/versions/12" #20200419 v4
-#url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426 v5
+url7 <- "https://ndownloader.figshare.com/articles/12033672/versions/7" #20200329 v1
+url8 <- "https://ndownloader.figshare.com/articles/12033672/versions/8" #20200405 v2
+url10 <- "https://ndownloader.figshare.com/articles/12033672/versions/10" #20200412 v3
+url12 <- "https://ndownloader.figshare.com/articles/12033672/versions/12" #20200419 v4
+url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426 v5
 
 #set current version number and url
-figshare_version <- 13
-version <- 5
-last_update <- "2020-04-26"
-url <- url13
+figshare_version <- 7
+version <- 1
+last_update <- "2020-03-29"
+url <- url7
 
 #read and extract zip file
 getFiles(url)
 #read csv file
 df <- readFile()
+
+#clean abstracts
+#remove jats-tags, remove trailing "Abstract"
+
+df_abstract <- df %>%
+  mutate(abstract2 = abstract)
 
 
 #write as version
