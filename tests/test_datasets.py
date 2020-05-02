@@ -8,6 +8,7 @@ from asreview.datasets import find_data
 ASREVIEW_COVID19_DATASET_COLLECTIONS = [
     "cord19-all",
     "cord19-2020",
+    "covid19-preprints"
 ]
 
 
