@@ -38,12 +38,12 @@ file.edit("~/.Renviron")
 
 #----------------------------------------------------
 #URLs for CORD19 dataset
-#url3 <- "https://zenodo.org/record/3715506/files/all_sources_metadata_2020-03-13.csv" #20200313
-#url4 <- "https://zenodo.org/record/3727291/files/metadata.csv" #20200320
-#url5 <- "https://zenodo.org/record/3731937/files/metadata.csv" #20200327
-#url6 <- "https://zenodo.org/record/3739581/files/metadata.csv" #20200403
-#url7 <- "https://zenodo.org/record/3748055/files/metadata.csv" #20200410
-#url8 <- "https://zenodo.org/record/3756191/files/metadata.csv" #20200417
+url3 <- "https://zenodo.org/record/3715506/files/all_sources_metadata_2020-03-13.csv" #20200313
+url4 <- "https://zenodo.org/record/3727291/files/metadata.csv" #20200320
+url5 <- "https://zenodo.org/record/3731937/files/metadata.csv" #20200327
+url6 <- "https://zenodo.org/record/3739581/files/metadata.csv" #20200403
+url7 <- "https://zenodo.org/record/3748055/files/metadata.csv" #20200410
+url8 <- "https://zenodo.org/record/3756191/files/metadata.csv" #20200417
 url9 <- "https://zenodo.org/record/3765923/files/metadata.csv" #20200424
 
 
@@ -136,14 +136,17 @@ write_csv(CORD19_201912, filename)
 #collect statistics for ASReview for full set and subset
 statistics <- getStats(CORD19, CORD19_201912)
 
-#save and write as json
-statistics_json <- toJSON(statistics, pretty = TRUE, auto_unbox = TRUE)
-filepath_statistics <- paste0("output/statistics_cord19_v",
-                              version,
-                              ".json")
-write(json_all, filepath_statistics)
+#import statistics json file
+filepath_statistics <- "output/statistics.json"
+statistics_parent <- fromJSON(filepath_statistics)
 
-#to do: make this into a list with elements for each subsequent version
+#add stats for current version as named element to parent list
+var <- paste0("v", version)
+statistics_parent[[var]] <- statistics
+
+#save and write as json
+statistics_json <- toJSON(statistics_parent, pretty = TRUE, auto_unbox = TRUE)
+write(statistics_json, filepath_statistics)
 
 #-------------------------------------------------------------
 

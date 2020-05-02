@@ -6,9 +6,9 @@
 #https://doi.org/10.6084/m9.figshare.12033672
 
 #install.packages("tidyverse")
-#install.paclibrary(tidyverse)
-library(jsonlite)kages("jsonlite")
-
+#install.packages("jsonlite")
+library(tidyverse)
+library(jsonlite)
 
 source("src/Covid19_preprints_import.R")
 source("src/Covid19_preprints_get_stats.R")
@@ -17,11 +17,8 @@ source("src/Covid19_preprints_get_stats.R")
 #--------------------------------------------------------
 #STILL TO DO
 
-#make modifying json files into function to call
+#make modifying json files into functions to call
 #wait until after everything is confirmed to work well!
-
-#make statistics.json into nested list with elements for each version
-
 
 #----------------------------------------------------
 #URLs for COVID_preprints dataset
@@ -31,8 +28,7 @@ source("src/Covid19_preprints_get_stats.R")
 #url8 <- "https://ndownloader.figshare.com/articles/12033672/versions/8" #20200405 v2
 #url10 <- "https://ndownloader.figshare.com/articles/12033672/versions/10" #20200412 v3
 #url12 <- "https://ndownloader.figshare.com/articles/12033672/versions/12" #20200419 v4
-url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426 v5
-
+#url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426 v5
 
 #set current version number and url
 figshare_version <- 13
@@ -59,17 +55,23 @@ write_csv(df, filename)
 
 #--------------------------------------------------------------
 
-#collect statistics for ASReview for full set and subset
+#collect and store statistics for ASReview
+
+#get stats for current version
 statistics <- getStats(df)
 
+#import statistics json file
+filepath_statistics <- "output/statistics_preprints.json"
+statistics_parent <- fromJSON(filepath_statistics)
+
+#add stats for current version as named element to parent list
+var <- paste0("v", version)
+statistics_parent[[var]] <- statistics
+
 #save and write as json
-statistics_json <- toJSON(statistics, pretty = TRUE, auto_unbox = TRUE)
-filepath_statistics <- paste0("output/statistics_preprints_v",
-                              version,
-                              ".json")
+statistics_json <- toJSON(statistics_parent, pretty = TRUE, auto_unbox = TRUE)
 write(statistics_json, filepath_statistics)
 
-#to do: make this into a list with elements for each subsequent version
 
 #-------------------------------------------------------------
 
