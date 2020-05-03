@@ -1,0 +1,6 @@
+{
+  "title": "COVID19 preprints",
+  "base_id": "covid19-preprints",
+  "type": "versioned",
+  "filenames": ["covid19_preprints_v1.json", "covid19_preprints_v2.json", "covid19_preprints_v3.json", "covid19_preprints_v4.json", "covid19_preprints_v5.json"]
+}
