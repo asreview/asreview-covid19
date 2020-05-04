@@ -1,0 +1,6 @@
+{
+  "1": "{\n  \"dataset_id\": \"cord19-latest\",\n  \"title\": \"CORD-19 latest\",\n  \"description\": \"A free dataset on publications on the corona virus.\",\n  \"authors\": \"Allen institute for AI\",\n  \"topic\": \"Covid-19\",\n  \"link\": \"https://pages.semanticscholar.org/coronavirus-research\",\n  \"last_update\": \"2020-05-01\",\n  \"statistics\": {\n    \"n_papers\": 59887,\n    \"n_missing_title\": 163,\n    \"n_missing_abstract\": 11130\n  },\n  \"img_url\": \"https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png\",\n  \"license\": \"Covid dataset license\",\n  \"sha512\": \"389c59484172005dac7633c9707bdfb50813fa8e2c9ee9dad930efd0f51116c61b171d2846c955ea0b118a5dc5136338d30446724c115b9348eb2946ec78e1eb\",\n  \"url\": \"https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv\"\n}",
+  "dataset_id": "cord19-v10",
+  "title": "CORD-19 v10",
+  "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv"
+}

@@ -14,7 +14,8 @@ seeCORDfull <- function(url){
 getCORDfull <- function(url){
   df <- read_csv(url, 
                  col_types = cols(`Microsoft Academic Paper ID` = col_character(), 
-                                  `WHO #Covidence` = col_character(), 
+                                  `WHO #Covidence` = col_character(),
+                                  arxiv_id = col_character(), #from v10 onwards
                                   journal = col_character(), 
                                   pmcid = col_character(), 
                                   publish_time = col_character(), 
