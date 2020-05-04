@@ -10,7 +10,7 @@ The most recent version of the dataset can be downloaded here:
 [https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv).  
 All versions are archived on [Zenodo](https://doi.org/10.5281/zenodo.3715505). 
 
-Version 9 of the dataset (dated May 1, 2020) contains metadata of 60K publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications,  the preprint servers bioRxiv, medRxiv and arXiv, and papers contributed by specific publishers (currently Elsevier).
+Version 10 of the dataset (dated May 1, 2020) contains metadata of 60K publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications,  the preprint servers bioRxiv, medRxiv and arXiv, and papers contributed by specific publishers (currently Elsevier).
 
 
 ## Supplemental date information
