@@ -15,7 +15,7 @@ The most recent version of the dataset can be downloaded here:
 All versions are archived on [Zenodo](https://doi.org/10.5281/zenodo.3715505).
 
 ## COVID19 preprints dataset
-The [COVID19 preprints dataset](https://github.com/nicholasmfraser/covid19_preprints) is created by [Nicholas Fraser](https://github.com/nicholasmfraser) and [Bianca Kramer](https://github.com/bmkramer), by collecting metadata of COVID19-related preprints from over 15 preprint servers with DOIs registered with Crossref or DataCite, and from arXiv. 
+The [COVID19 preprints dataset](https://github.com/nicholasmfraser/covid19_preprints) is created by [Nicholas Fraser](https://github.com/nicholasmfraser) and [Bianca Kramer](https://github.com/bmkramer), by collecting metadata of COVID19-related preprints from over 15 preprint servers with DOIs registered with Crossref or DataCite, and from arXiv. The dataset contains metadata of 7K preprints on COVID-19 and coronavirus-related research. The COVID19 preprints dataset is updated weekly.
 
 The most recent version of the dataset can be downloaded here (csv):  
 [https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv](https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv).  
@@ -58,7 +58,7 @@ The datasets are selectable in Step 2 of the project initialization. For more in
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3764749.svg)](https://doi.org/10.5281/zenodo.3764749) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-The ASReview software and the plugin have an Apache 2.0 LICENSE. For the datasets, please see the license of the CORD-19 dataset https://pages.semanticscholar.org/coronavirus-research. 
+The ASReview software and the plugin have an Apache 2.0 LICENSE. For the datasets, please see the license of the CORD-19 dataset https://pages.semanticscholar.org/coronavirus-research. The COVID19 preprints dataset has a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/).
 
 Visit https://doi.org/10.5281/zenodo.3764749 to get the citation style of your preference. 
 
