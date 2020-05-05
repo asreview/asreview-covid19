@@ -5,11 +5,11 @@
   "authors": "Allen institute for AI",
   "topic": "Covid-19",
   "link": "https://pages.semanticscholar.org/coronavirus-research",
-  "last_update": "2020-04-24",
+  "last_update": "2020-05-01",
   "statistics": {
-    "n_papers": 57366,
+    "n_papers": 59887,
     "n_missing_title": 163,
-    "n_missing_abstract": 10519
+    "n_missing_abstract": 11130
   },
   "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
   "license": "Covid dataset license",

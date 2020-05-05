@@ -2,5 +2,5 @@
   "title": "CORD-19",
   "base_id": "cord19-all",
   "type": "versioned",
-  "filenames": ["cord19_v3_all.json", "cord19_v4_all.json", "cord19_v5_all.json", "cord19_v6_all.json", "cord19_v7_all.json", "cord19_v8_all.json", "cord19_v9_all.json"]
+  "filenames": ["cord19_v3_all.json", "cord19_v4_all.json", "cord19_v5_all.json", "cord19_v6_all.json", "cord19_v7_all.json", "cord19_v8_all.json", "cord19_v9_all.json", "cord19_v10_all.json"]
 }

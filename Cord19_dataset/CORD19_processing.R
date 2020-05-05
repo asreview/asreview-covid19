@@ -1,6 +1,6 @@
 #Add dates to CORD19 dataset (missing and/or non-formatted dates)
 #Create subset of records from Dec 2019 onwards
-#Current version: v9 dd 20200424
+#Current version: v10 dd 20200501
 
 #info on CORD19 dataset:
 ##https://www.semanticscholar.org/cord19/download
@@ -45,12 +45,13 @@ url6 <- "https://zenodo.org/record/3739581/files/metadata.csv" #20200403
 url7 <- "https://zenodo.org/record/3748055/files/metadata.csv" #20200410
 url8 <- "https://zenodo.org/record/3756191/files/metadata.csv" #20200417
 url9 <- "https://zenodo.org/record/3765923/files/metadata.csv" #20200424
+url10 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv" #20200501
 
 
 #set current version number and url
-version <- 9
-last_update <- "2020-04-24"
-url <- url9
+version <- 10
+last_update <- "2020-05-01"
+url <- url10
 
 #---------------------------------------------
 
@@ -80,7 +81,6 @@ doi_list <- CORD19 %>%
 doi_date <- getCrossref(doi_list)
 doi_date <- formatDateCrossref(doi_date)
 doi_date <- distinct(doi_date)
-
 
 #create columns doi_lc in both databases for matching
 CORD19 <- CORD19 %>%
