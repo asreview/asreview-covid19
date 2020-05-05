@@ -1,16 +1,19 @@
 #Import Covid19 preprints dataset (selected columns)
 
 #define function to read and extract zip file from Figshare
-getFiles <- function(url){
+getFiles <- function(url, date = last_update){
+  dir.create("data")
+  #zipfile <- paste0("covid19_preprints.zip") #up until v5
+  zipfile <- paste0("covid19_preprints-", date, ".zip") #from v6 onwards
   path <- "data"
   path1 <- file.path(path, "data.zip")
-  path2 <- file.path(path, "covid19_preprints.zip") #root of downloaded zip file
+  path2 <- file.path(path, zipfile) #root of downloaded zip file
   
   download.file(url, path1, mode="wb")
   unzip(zipfile = path1, exdir = "data")
   unzip(zipfile = path2, exdir = "data")
   #remove zip-files
-  unlink(c("data/data.zip", "data/covid19_preprints.zip"))
+  unlink(c(path1, path2))
 }
 
 #define function to read Covid19 preprints file (csv)
@@ -30,7 +33,7 @@ readFile <- function(){
                    abstract = col_character()
                  ))
   
-  unlink(file.path(path, file), recursive = TRUE)
+  unlink(path, recursive = TRUE)
   
   return(df)
   
