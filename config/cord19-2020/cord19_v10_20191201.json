@@ -1,6 +1,18 @@
 {
-  "1": "{\n  \"dataset_id\": \"cord19-2020-latest\",\n  \"title\": \"CORD-19 latest since Dec. 2019\",\n  \"description\": \"A free dataset on publications on the corona virus.\",\n  \"authors\": \"Allen institute for AI\",\n  \"topic\": \"Covid-19\",\n  \"link\": \"https://pages.semanticscholar.org/coronavirus-research\",\n  \"last_update\": \"2020-05-01\",\n  \"statistics\": {\n    \"n_papers\": 10831,\n    \"n_missing_title\": 3,\n    \"n_missing_abstract\": 3162\n  },\n  \"img_url\": \"https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png\",\n  \"license\": \"Covid dataset license\",\n  \"sha512\": \"57f8db3b9447f6e0ffe12f2441321a6dfa69dd298dd3e44fbf0ec131a9b7c1e6e576e4cec0252f16a8714e943bb6a144c9dda7668f806688990117f01c9bc38a\",\n  \"url\": \"https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_latest_20191201.csv\"\n}",
-  "dataset_id": "cord19-2020-v10",
-  "title": "CORD-19 v10 since Dec. 2019",
+  "dataset_id": "cord19-2020-latest",
+  "title": "CORD-19 latest since Dec. 2019",
+  "description": "A free dataset on publications on the corona virus.",
+  "authors": "Allen institute for AI",
+  "topic": "Covid-19",
+  "link": "https://pages.semanticscholar.org/coronavirus-research",
+  "last_update": "2020-05-01",
+  "statistics": {
+    "n_papers": 10831,
+    "n_missing_title": 3,
+    "n_missing_abstract": 3162
+  },
+  "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+  "license": "Covid dataset license",
+  "sha512": "57f8db3b9447f6e0ffe12f2441321a6dfa69dd298dd3e44fbf0ec131a9b7c1e6e576e4cec0252f16a8714e943bb6a144c9dda7668f806688990117f01c9bc38a",
   "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_v10_20191201.csv"
 }
