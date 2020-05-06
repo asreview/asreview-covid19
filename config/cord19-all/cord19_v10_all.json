@@ -1,5 +1,5 @@
 {
-  "dataset_id": "cord19-latest",
+  "dataset_id": "cord19-v10",
   "title": "CORD-19 latest",
   "description": "A free dataset on publications on the corona virus.",
   "authors": "Allen institute for AI",
