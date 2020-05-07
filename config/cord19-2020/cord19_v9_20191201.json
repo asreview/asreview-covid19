@@ -9,7 +9,7 @@
     "license": "Covid dataset license",
     "dataset_id": "cord19-2020-v9",
     "title": "CORD-19 v9",
-    "last_update": "2020-05-01",
+    "last_update": "2020-04-24",
     "sha512": "cfb708725c8f7617f6cdfe4ee4da37e2f45607440763beb05c27d9738b3ef8bb50645fcbb605ba960ba33ed37973480c6ea531e0eca5773c13b4653ea18036fc",
     "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v9_20191201.csv",
     "statistics": {
