@@ -1,18 +1,21 @@
 {
-  "dataset_id": "covid19-preprints-v4",
-  "title": "Covid19 preprints v4",
-  "description": "Preprints related to COVID-19",
-  "authors": "Nicholas Fraser and Bianca Kramer",
-  "topic": "Covid-19",
-  "link": "https://doi.org/10.6084/m9.figshare.12033672.v12",
-  "last_update": "2020-04-19",
-  "statistics": {
-    "n_papers": 5278,
-    "n_missing_title": 0,
-    "n_missing_abstract": 1419
-  },
-  "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",
-  "license": "CC0",
-  "sha512": "57f8db3b9447f6e0ffe12f2441321a6dfa69dd298dd3e44fbf0ec131a9b7c1e6e576e4cec0252f16a8714e943bb6a144c9dda7668f806688990117f01c9bc38a",
-  "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/preprints/covid19_preprints_v4.csv"
+    "description": "Preprints related to COVID-19",
+    "authors": [
+        "Nicholas Fraser",
+        "Bianca Kramer"
+    ],
+    "topic": "Covid-19",
+    "link": "https://doi.org/10.6084/m9.figshare.12033672.v12",
+    "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",
+    "license": "CC0",
+    "dataset_id": "covid19-preprints-v4",
+    "title": "Covid-19 preprints v4",
+    "last_update": "2020-04-19",
+    "sha512": "e944ce2309fb9ec95cbbb35a9e4aff55689f7ba0aadaf6709c6f305102f17a0cd69da2c460542bda9ac3933b7f68baab1a0623fef6b3ff1e49ad2cfe8fbe78c6",
+    "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/covid19-preprints/covid19_preprints_v4.csv",
+    "statistics": {
+        "n_papers": 5278,
+        "n_missing_title": 0,
+        "n_missing_abstract": 1419
+    }
 }
