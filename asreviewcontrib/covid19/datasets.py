@@ -36,4 +36,3 @@ class Covid19DataGroup(BaseDataGroup):
         super(Covid19DataGroup, self).__init__(
             *datasets
         )
-        print(self)
