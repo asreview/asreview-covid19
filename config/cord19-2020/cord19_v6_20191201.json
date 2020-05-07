@@ -8,8 +8,8 @@
     "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
     "license": "Covid dataset license",
     "dataset_id": "cord19-2020-v6",
-    "title": "CORD-19 v6",
-    "last_update": "2020-04-10",
+    "title": "CORD-19 v6 since Dec. 2019",
+    "last_update": "2020-04-03",
     "sha512": "a915ea8f885e2280e1b5ddec740a4cb9e426e627ba373c5c6fbfaec532627fb9e8ed10d58bd2a90851b87eb4798a6364e1e4eccfbb8423403b2ce4d164dc25d7",
     "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v6_20191201.csv",
     "statistics": {

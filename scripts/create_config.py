@@ -68,10 +68,10 @@ def create_2020_configs(from_file=True):
             ("v4", "2020-03-20"),
             ("v5", "2020-03-27"),
             ("v6", "2020-04-03"),
-            ("v6", "2020-04-10"),
-            ("v7", "2020-04-17"),
-            ("v8", "2020-04-24"),
-            ("v9", "2020-05-01"),
+            ("v7", "2020-04-10"),
+            ("v8", "2020-04-17"),
+            ("v9", "2020-04-24"),
+            ("v10", "2020-05-01"),
         ]
 
         with open("cord19-2020.json", "w") as f:
@@ -83,7 +83,7 @@ def create_2020_configs(from_file=True):
     json_names = []
     for version, last_update in datasets:
         file_name = f"cord19_{version}_20191201.csv"
-        title = f"CORD-19 {version}"
+        title = f"CORD-19 {version} since Dec. 2019"
         dataset_id = f"cord19-2020-{version}"
         create_config("cord19-2020", file_name, last_update, title, dataset_id)
         json_names.append(Path(file_name).stem + ".json")

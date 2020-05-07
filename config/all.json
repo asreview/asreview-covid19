@@ -14,7 +14,7 @@
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
                 "dataset_id": "cord19-2020-v4",
-                "title": "CORD-19 v4",
+                "title": "CORD-19 v4 since Dec. 2019",
                 "last_update": "2020-03-20",
                 "sha512": "7943202bef6d829ac859f7b61b3706601fcd4ca360421e54449c530eb7ca20ee7dc0563cb0603d6c3ec1a9bc4ee9589f757a50f5abc48aa790e3dbac2147197f",
                 "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v4_20191201.csv",
@@ -34,7 +34,7 @@
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
                 "dataset_id": "cord19-2020-v5",
-                "title": "CORD-19 v5",
+                "title": "CORD-19 v5 since Dec. 2019",
                 "last_update": "2020-03-27",
                 "sha512": "19108d700c8439c4bdb0543e2cea5cc19e601252071f64e9d490e4f9627d9d66240ddfbf92ac1b928a49ef56a61c8ce6cc5de0b63ff9eb01feaa4340e9643085",
                 "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v5_20191201.csv",
@@ -54,28 +54,8 @@
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
                 "dataset_id": "cord19-2020-v6",
-                "title": "CORD-19 v6",
-                "last_update": "2020-04-10",
-                "sha512": "a915ea8f885e2280e1b5ddec740a4cb9e426e627ba373c5c6fbfaec532627fb9e8ed10d58bd2a90851b87eb4798a6364e1e4eccfbb8423403b2ce4d164dc25d7",
-                "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v6_20191201.csv",
-                "statistics": {
-                    "n_papers": 4744,
-                    "n_missing_title": 2,
-                    "n_missing_abstract": 1103
-                }
-            },
-            {
-                "description": "A free dataset on publications on the corona virus.",
-                "authors": [
-                    "Allen institute for AI"
-                ],
-                "topic": "Covid-19",
-                "link": "https://pages.semanticscholar.org/coronavirus-research",
-                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
-                "license": "Covid dataset license",
-                "dataset_id": "cord19-2020-v6",
-                "title": "CORD-19 v6",
-                "last_update": "2020-04-10",
+                "title": "CORD-19 v6 since Dec. 2019",
+                "last_update": "2020-04-03",
                 "sha512": "a915ea8f885e2280e1b5ddec740a4cb9e426e627ba373c5c6fbfaec532627fb9e8ed10d58bd2a90851b87eb4798a6364e1e4eccfbb8423403b2ce4d164dc25d7",
                 "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v6_20191201.csv",
                 "statistics": {
@@ -94,8 +74,8 @@
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
                 "dataset_id": "cord19-2020-v7",
-                "title": "CORD-19 v7",
-                "last_update": "2020-04-17",
+                "title": "CORD-19 v7 since Dec. 2019",
+                "last_update": "2020-04-10",
                 "sha512": "57f8db3b9447f6e0ffe12f2441321a6dfa69dd298dd3e44fbf0ec131a9b7c1e6e576e4cec0252f16a8714e943bb6a144c9dda7668f806688990117f01c9bc38a",
                 "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v7_20191201.csv",
                 "statistics": {
@@ -114,8 +94,8 @@
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
                 "dataset_id": "cord19-2020-v8",
-                "title": "CORD-19 v8",
-                "last_update": "2020-04-24",
+                "title": "CORD-19 v8 since Dec. 2019",
+                "last_update": "2020-04-17",
                 "sha512": "c8032237903bb9aee432b8d3d59f12e912bf86adff015b2423ba16ee7b48a0ae87219526975d91ac479e5fd159c93dbc742d0e5831e1ff210a225ed80ebc3706",
                 "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v8_20191201.csv",
                 "statistics": {
@@ -134,14 +114,34 @@
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
                 "dataset_id": "cord19-2020-v9",
-                "title": "CORD-19 v9",
-                "last_update": "2020-05-01",
+                "title": "CORD-19 v9 since Dec. 2019",
+                "last_update": "2020-04-24",
                 "sha512": "cfb708725c8f7617f6cdfe4ee4da37e2f45607440763beb05c27d9738b3ef8bb50645fcbb605ba960ba33ed37973480c6ea531e0eca5773c13b4653ea18036fc",
                 "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v9_20191201.csv",
                 "statistics": {
                     "n_papers": 8560,
                     "n_missing_title": 3,
                     "n_missing_abstract": 2557
+                }
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-v10",
+                "title": "CORD-19 v10 since Dec. 2019",
+                "last_update": "2020-05-01",
+                "sha512": "7649011e50cae7c42abd7f9242c34eefaad7cec2b78cd033fa862f43881d7b1b9f81c99e6602331d2bc12065c721d9a398decc7577de9d5285143746393a1efd",
+                "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v10_20191201.csv",
+                "statistics": {
+                    "n_papers": 10831,
+                    "n_missing_title": 3,
+                    "n_missing_abstract": 3162
                 }
             }
         ]
