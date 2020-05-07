@@ -18,23 +18,23 @@ source("src/Covid19_preprints_get_stats.R")
 #STILL TO DO
 
 #make modifying json files into functions to call
-#wait until after everything is confirmed to work well!
 
 #----------------------------------------------------
 #URLs for COVID_preprints dataset
 #url version number is Figshare version
 #date is date until which dataset is updated
-#url7 <- "https://ndownloader.figshare.com/articles/12033672/versions/7" #20200329 v1
-#url8 <- "https://ndownloader.figshare.com/articles/12033672/versions/8" #20200405 v2
-#url10 <- "https://ndownloader.figshare.com/articles/12033672/versions/10" #20200412 v3
-#url12 <- "https://ndownloader.figshare.com/articles/12033672/versions/12" #20200419 v4
-#url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426 v5
+url7 <- "https://ndownloader.figshare.com/articles/12033672/versions/7" #20200329 v1
+url8 <- "https://ndownloader.figshare.com/articles/12033672/versions/8" #20200405 v2
+url10 <- "https://ndownloader.figshare.com/articles/12033672/versions/10" #20200412 v3
+url12 <- "https://ndownloader.figshare.com/articles/12033672/versions/12" #20200419 v4
+url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200426 v5
+url14 <- "https://ndownloader.figshare.com/articles/12033672/versions/14" #20200503 v6
 
 #set current version number and url
-figshare_version <- 13
-version <- 5
-last_update <- "2020-04-26"
-url <- url13
+figshare_version <- 14
+version <- 6
+last_update <- "2020-05-03"
+url <- url14
 
 #read and extract zip file
 getFiles(url)
@@ -45,8 +45,8 @@ df <- readFile()
 #remove jats-tags, remove leading "Abstract"
 
 df <- df %>%
-  mutate(abstract = str_remove(abstract, "<jats:title>.*?</jats:title>")) %>%
-  mutate(abstract = str_remove(abstract, "<.*?>"))
+  mutate(abstract = str_remove_all(abstract, "<jats:title>.*?</jats:title>")) %>%
+  mutate(abstract = str_remove_all(abstract, "<.*?>"))
 
 #write as version
 filename <- paste0("../datasets/preprints/covid19_preprints_v",
