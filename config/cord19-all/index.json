@@ -1,6 +1,6 @@
 {
     "title": "CORD-19",
-    "base_id": "cord19",
+    "base_id": "cord19-all",
     "type": "versioned",
     "filenames": [
         "cord19_v3_all.json",
