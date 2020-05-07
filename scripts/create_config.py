@@ -140,7 +140,7 @@ def create_complete_configs(from_file=True):
 
     meta_data = {
         "title": "CORD-19",
-        "base_id": "cord19",
+        "base_id": "cord19-all",
         "type": "versioned",
         "filenames": [x for x in data_names],
     }
