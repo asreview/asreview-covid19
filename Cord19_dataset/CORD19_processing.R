@@ -10,14 +10,9 @@
 #install.packages("europepmc")
 #install.packages("lubridate")
 library(tidyverse)
-library(rcrossref)
-library(europepmc)
-library(lubridate)
 library(jsonlite)
 
 source("src/CORD19_import.R")
-source("src/CORD19_match_dois.R")
-source("src/CORD19_match_PMCID.R")
 source("src/CORD19_create_subset.R")
 source("src/CORD19_get_stats.R")
 
@@ -33,9 +28,6 @@ file.edit("~/.Renviron")
 #make modifying json files into function to call
 #wait until after everything is confirmed to work well!
 
-#make statistics.json into nested list with elements for each version
-
-
 #----------------------------------------------------
 #URLs for CORD19 dataset
 url3 <- "https://zenodo.org/record/3715506/files/all_sources_metadata_2020-03-13.csv" #20200313
@@ -46,88 +38,37 @@ url7 <- "https://zenodo.org/record/3748055/files/metadata.csv" #20200410
 url8 <- "https://zenodo.org/record/3756191/files/metadata.csv" #20200417
 url9 <- "https://zenodo.org/record/3765923/files/metadata.csv" #20200424
 url10 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv" #20200501
-
+url11 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv" #20200512
 
 #set current version number and url
-version <- 10
-last_update <- "2020-05-01"
-url <- url10
+version <- 11
+last_update <- "2020-05-12"
+url <- url11
 
 #---------------------------------------------
 
 #inspect first lines of full dataset to view columns
-#CORD19 <- seeCORDfull(url)
+CORD19 <- seeCORDfull(url)
 
 #read full dataset, set number of columns to character, to read all values in
 CORD19 <- getCORDfull(url)
 
 #Add date columns - setting date format will only keep properly formatted entries
 CORD19 <- CORD19 %>%
-  mutate(date_prior = as.Date(publish_time),
-         date_post = date_prior)
-
-#------------------------------------------------------
-
-#for records without proper date, extract dois as character vector
-
-doi_list <- CORD19 %>%
-  filter(is.na(date_post)) %>%
-  filter(!is.na(doi)) %>%
-  pull(doi) %>%
-  unique() 
-
-#get created date from Crossref for dois
-#runtime appr. 1 m per 100 dois, progress bar is shown
-doi_date <- getCrossref(doi_list)
-doi_date <- formatDateCrossref(doi_date)
-doi_date <- distinct(doi_date)
-
-#create columns doi_lc in both databases for matching
-CORD19 <- CORD19 %>%
-  mutate(doi_lc = str_to_lower(doi))
-
-doi_date <- doi_date %>%
-  mutate(doi_lc = str_to_lower(doi))
-
-#join dates to full database, add to column date_post
-CORD19 <- joinDateCrossref(CORD19, doi_date)
-
-#------------------------------------------------------------
-
-#for records without proper date, extract pmcids as character vector
-pmcid_list <- CORD19 %>%
-  filter(is.na(date_post)) %>%
-  filter(!is.na(pmcid)) %>%
-  pull(pmcid) %>%
-  unique()
-
-#set parameter for progress bar
-pb <- progress_estimated(length(pmcid_list))
-
-# get data from EuropePMC
-# app 1 min/100 DOIS, progress bar shown
-pmcid_date <- map_dfr(pmcid_list, getEuropePMC_progress)
-# NB this gives an message for each result - find a way to suppress them
-rm(pb)
-
-#extract data and format date
-pmcid_date <- extractDataEuropePMC(pmcid_date)
-
-#join dates to full database, add to column date_post
-CORD19 <- joinDateEuropePMC(CORD19, pmcid_date)
+  mutate(date = as.Date(publish_time))
 
 #--------------------------------------------------------
 #create subset from 20191201
 CORD19_201912 <- getSubset(CORD19)
 
 #write as version
-filename <- paste0("../datasets/cord19_v",
+filename <- paste0("../datasets/cord19-2020/cord19_v",
                    version,
                    "_20191201.csv")
 write_csv(CORD19_201912, filename)
 
 #also write as latest
-filename <- paste0("../datasets/cord19_latest_20191201.csv")
+filename <- paste0("../datasets/cord19-2020/cord19_latest_20191201.csv")
 write_csv(CORD19_201912, filename)
 
 

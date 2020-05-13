@@ -8,8 +8,7 @@ getStats <- function(all, subset, v = version, update = last_update){
   statistics$last_update <- update
   
   statistics$dates$total <- nrow(all)
-  statistics$dates$missing_dates_prior <- nrow(filter(all, is.na(date_prior)))
-  statistics$dates$missing_dates_post <- nrow(filter(all, is.na(date_post)))
+  statistics$dates$missing_dates_prior <- nrow(filter(all, is.na(date)))
   
   statistics$all$n_papers <- nrow(all)
   statistics$all$n_missing_title <- nrow(filter(all, is.na(title)))
