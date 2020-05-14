@@ -94,7 +94,7 @@ write(statistics_json, filepath_statistics)
 #modify JSON files in ../scripts
 #NB streamline with functions after it has been confirmed to work in ASReview
 
-#read json files (use 'latest' as basis for updates)
+#read json files 
 filepath_all <- "../scripts/cord19-all.json"
 filepath_subset <- "../scripts/cord19-2020.json"
 
