@@ -91,90 +91,29 @@ write(statistics_json, filepath_statistics)
 
 #-------------------------------------------------------------
 
-#modify JSON files
+#modify JSON files in ../scripts
 #NB streamline with functions after it has been confirmed to work in ASReview
 
 #read json files (use 'latest' as basis for updates)
-filepath_latest_all <- "../config/cord19-all/cord19_latest_all.json"
-filepath_latest_subset <- "../config/cord19-2020/cord19_latest_20191201.json"
+filepath_all <- "../scripts/cord19-all.json"
+filepath_subset <- "../scripts/cord19-2020.json"
 
-json_all <- fromJSON(filepath_latest_all)
-json_subset <- fromJSON(filepath_latest_subset)
+json_all <- fromJSON(filepath_all)
+json_subset <- fromJSON(filepath_subset)
 
+#------------------------------------------------------------------------------
+#update info with latest version
+
+json_all_new <- json_all %>% 
+  rbind(c(var, last_update, url))
+
+json_subset_new <- json_subset %>%
+  rbind(c(var, last_update))
 
 #-----------------------------------------------------------------------------------
-#update info to latest version using data in 'statistics'
+#write to file
+json_all_new <- toJSON(json_all_new, pretty = TRUE, auto_unbox = TRUE)
+json_subset_new <- toJSON(json_subset_new, pretty = TRUE, auto_unbox = TRUE)
 
-json_all$last_update <- last_update
-json_all$statistics$n_papers <- statistics$all$n_papers
-json_all$statistics$n_missing_title <- statistics$all$n_missing_title
-json_all$statistics$n_missing_abstract <- statistics$all$n_missing_abstract
-
-json_subset$last_update <- last_update
-json_subset$statistics$n_papers <- statistics$subset$n_papers
-json_subset$statistics$n_missing_title <- statistics$subset$n_missing_title
-json_subset$statistics$n_missing_abstract <- statistics$subset$n_missing_abstract 
-
-
-json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
-json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
-
-write(json_all, filepath_latest_all)
-write(json_subset, filepath_latest_subset)
-
-#-----------------------------------------------------------------
-#modify 'latest' version to create version-specific json-files
-
-json_all$dataset_id <- paste0("cord19-v", version)
-json_all$title <- paste0("CORD-19 v", version)
-json_all$url <- url
-
-json_subset$dataset_id <- paste0("cord19-2020-v", version)
-json_subset$title <- paste0("CORD-19 v", version, " since Dec. 2019")
-json_subset$url <- paste0("https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19_v",
-                          version,
-                          "_20191201.csv")
-
-json_all <- toJSON(json_all, pretty = TRUE, auto_unbox = TRUE)
-json_subset <- toJSON(json_subset, pretty = TRUE, auto_unbox = TRUE)
-
-filepath_version_all <- paste0("../config/cord19-all/cord19_v",
-                                version,
-                                "_all.json")
-filepath_version_subset <- paste0("../config/cord19-2020/cord19_v",
-                                  version,
-                                  "_20191201.json")
-
-
-write(json_all, filepath_version_all)
-write(json_subset, filepath_version_subset)
-
-#--------------------------------------------------------------------
-
-#update index.json
-
-#read json files
-filepath_index_all <- "../config/cord19-all/index.json"
-filepath_index_subset <- "../config/cord19-2020/index.json"
-
-json_index_all <- fromJSON(filepath_index_all)
-json_index_subset <- fromJSON(filepath_index_subset)
-
-filenames_all <- json_index_all$filenames
-filenames_subset <- json_index_subset$filenames
-
-filenames_all_new <- paste0("cord19_v", version, "_all.json")
-filenames_subset_new <- paste0("cord19_v", version, "_20191201.json")
-
-filenames_all <- append(filenames_all, filenames_all_new)
-filenames_subset <- append(filenames_subset, filenames_subset_new)
-
-json_index_all$filenames <- filenames_all
-json_index_subset$filenames <- filenames_subset
-
-json_index_all <- toJSON(json_index_all, pretty = TRUE, auto_unbox = TRUE)
-json_index_subset <- toJSON(json_index_subset, pretty = TRUE, auto_unbox = TRUE)
-
-write(json_index_all, filepath_index_all)
-write(json_index_subset, filepath_index_subset)
-
+write(json_all_new, filepath_all)
+write(json_subset_new, filepath_subset)
