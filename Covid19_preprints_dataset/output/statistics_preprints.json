@@ -52,5 +52,14 @@
       "n_missing_title": 0,
       "n_missing_abstract": 1931
     }
+  },
+  "v7": {
+    "version": 7,
+    "last_update": "2020-05-10",
+    "preprints": {
+      "n_papers": 8737,
+      "n_missing_title": 0,
+      "n_missing_abstract": 2285
+    }
   }
 }
