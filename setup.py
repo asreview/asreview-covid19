@@ -3,17 +3,14 @@ from setuptools import setup, find_namespace_packages
 from os import path
 from io import open
 
+import versioneer
+
+
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
-
-# Extract version from cbsodata.py
-for line in open(path.join("asreviewcontrib", "covid19", "__init__.py")):
-    if line.startswith('__version__'):
-        exec(line)
-        break
 
 DEPS = {
     "config-create": "asreview-statistics",
@@ -23,7 +20,8 @@ DEPS['all'] = DEPS["config-create"]
 
 setup(
     name='asreview-covid19',
-    version=__version__,  # noqa
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='Covid-19 related datasets for ASReview',
     long_description=long_description,
     long_description_content_type='text/markdown',
