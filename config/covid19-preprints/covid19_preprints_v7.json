@@ -1,0 +1,21 @@
+{
+    "description": "Preprints related to COVID-19",
+    "authors": [
+        "Nicholas Fraser",
+        "Bianca Kramer"
+    ],
+    "topic": "Covid-19",
+    "link": "https://doi.org/10.6084/m9.figshare.12033672.v16",
+    "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",
+    "license": "CC0",
+    "dataset_id": "covid19-preprints-v7",
+    "title": "Covid-19 preprints v7",
+    "last_update": "2020-05-10",
+    "sha512": "c104f61f90250aadc08c6a2d225eaa18de8b44bba78ed8bbf0db6aae555bad240e23f08996434fd326c15873e296a206e12e264acb055fd033ed4daceb0fe638",
+    "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/covid19-preprints/covid19_preprints_v7.csv",
+    "statistics": {
+        "n_papers": 8737,
+        "n_missing_title": 0,
+        "n_missing_abstract": 2285
+    }
+}

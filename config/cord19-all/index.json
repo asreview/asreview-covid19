@@ -10,6 +10,7 @@
         "cord19_v7_all.json",
         "cord19_v8_all.json",
         "cord19_v9_all.json",
-        "cord19_v10_all.json"
+        "cord19_v10_all.json",
+        "cord19_v11_all.json"
     ]
 }

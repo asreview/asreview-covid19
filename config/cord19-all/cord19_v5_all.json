@@ -11,7 +11,7 @@
     "title": "CORD-19 v5",
     "last_update": "2020-03-27",
     "sha512": "a6d8e7a4dd3f0194840129b7368fd97354b44a44fc0d06addfc9a27f3c08e19ef88ff568effb92994895353f7e9d771932f354bd619ee2242d4262f7561f41fe",
-    "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv",
+    "url": "https://zenodo.org/record/3731937/files/metadata.csv",
     "statistics": {
         "n_papers": 45774,
         "n_missing_title": 157,
