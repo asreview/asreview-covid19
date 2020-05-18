@@ -1,3 +1,2 @@
-include asreviewcontrib/covid19/config.json
 include versioneer.py
 include asreviewcontrib/covid19/_version.py

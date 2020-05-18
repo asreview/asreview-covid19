@@ -1,15 +1,20 @@
 #!/usr/bin/env python
+'''
+Create configuration data structure for each of the three datasets.
+It will read three (minimal) JSON files as input.
+'''
 
+from copy import deepcopy
 import json
-from os.path import isfile
 from hashlib import sha512
+import os
 from pathlib import Path
 from urllib.request import urlretrieve
 
 from asreviewcontrib.statistics import DataStatistics
-from copy import deepcopy
 
 
+# Template for both the cord-all and cord-2020 datasets.
 CORD19_TEMPLATE = {
         "description": "A free dataset on publications on the corona virus.",
         "authors": ["Allen institute for AI"],
@@ -21,6 +26,7 @@ CORD19_TEMPLATE = {
 }
 
 
+# Template for the Covid19 preprint datasets.
 COVID19_PREP_TEMPLATE = {
     "description": "Preprints related to COVID-19",
     "authors": ["Nicholas Fraser", "Bianca Kramer"],
@@ -34,6 +40,27 @@ COVID19_PREP_TEMPLATE = {
 def create_config(dataset, file_name, last_update, title, dataset_id,
                   template=CORD19_TEMPLATE,
                   url=None):
+    '''Create a new configuration file for a (version of) a dataset.
+
+    Arguments
+    ---------
+    dataset: str
+        Name of the dataset (without the version number).
+    file_name: str
+        Versioned file name. Either it should exist under the datasets
+        directory, or it will be downloaded to determine the statistics/hash.
+    last_update: str
+        Date when the original dataset was last updated.
+    title: str
+        Versioned title of the dataset.
+    dataset_id: str
+        Unique versioned dataset identifier.
+    template: dict
+        Template to start the configuration file from.
+    url: str
+        Url to dataset. If set to None, it will be assumed to be on the
+        ASReview-covid19 repository: datasets/{dataset}/{file_name}
+    '''
     data_fp = Path("..", "datasets", dataset, file_name)
     config_fp = Path("..", "config", dataset, data_fp.stem+".json")
     if url is None:
@@ -62,24 +89,17 @@ def create_config(dataset, file_name, last_update, title, dataset_id,
         json.dump(config_data, f, indent=4)
 
 
-def create_2020_configs(from_file=True):
-    if not from_file:
-        datasets = [
-            ("v4", "2020-03-20"),
-            ("v5", "2020-03-27"),
-            ("v6", "2020-04-03"),
-            ("v7", "2020-04-10"),
-            ("v8", "2020-04-17"),
-            ("v9", "2020-04-24"),
-            ("v10", "2020-05-01"),
-        ]
+def create_2020_configs():
+    '''Create the configuration files for the Cord-19-2020 dataset
 
-        with open("cord19-2020.json", "w") as f:
-            json.dump(datasets, f, indent=4)
-    else:
-        with open("cord19-2020.json", "r") as f:
-            datasets = json.load(f)
+    It needs as input the scripts/cord19-2020.json file, which is an ascending
+    list of versions of the dataset. Each item should be a tuple/list of the
+    version (e.g. "v1") and last update ("yyyy-mm-dd").
+    '''
+    with open("cord19-2020.json", "r") as f:
+        datasets = json.load(f)
 
+    # Create the individual configuration files.
     json_names = []
     for version, last_update in datasets:
         file_name = f"cord19_{version}_20191201.csv"
@@ -88,6 +108,7 @@ def create_2020_configs(from_file=True):
         create_config("cord19-2020", file_name, last_update, title, dataset_id)
         json_names.append(Path(file_name).stem + ".json")
 
+    # Create the index for the versioned datasets.
     index_fp = Path("..", "config", "cord19-2020", "index.json")
     meta_data = {
         "title": "CORD-19-2020",
@@ -99,35 +120,22 @@ def create_2020_configs(from_file=True):
         json.dump(meta_data, f, indent=4)
 
 
-def create_complete_configs(from_file=True):
-    if not from_file:
-        datasets = [
-            ("v3", "2020-03-13",
-                "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-13/all_sources_metadata_2020-03-13.csv"),  #noqa
-            ("v4", "2020-03-20",
-                "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-20/metadata.csv"),  #noqa
-            ("v5", "2020-03-27",
-                "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv"),  #noqa
-            ("v6", "2020-04-03",
-                "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-03/metadata.csv"),  #noqa
-            ("v7", "2020-04-10",
-                "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-10/metadata.csv"),  #noqa
-            ("v8", "2020-04-17",
-                "https://zenodo.org/record/3756191/files/metadata.csv"),  #noqa
-            ("v9", "2020-04-24",
-                "https://zenodo.org/record/3765923/files/metadata.csv"),  #noqa
-            ("v10", "2020-05-01",
-                "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv"),  #noqa
-        ]
+def create_complete_configs():
+    '''Create the configuration files for the original Cord-19 dataset
 
-        with open("cord19-all.json", "w") as f:
-            json.dump(datasets, f, indent=4)
-    else:
-        with open("cord19-all.json", "r") as f:
-            datasets = json.load(f)
+    It needs as input the scripts/cord19-all.json file, which is an ascending
+    list of versions of the dataset. Each item should be a tuple/list of the
+    version (e.g. "v1"), last update ("yyyy-mm-dd") and url to the dataset.
+    '''
+    with open("cord19-all.json", "r") as f:
+        datasets = json.load(f)
 
     data_dir = Path("..", "datasets", "cord19-all")
+    if not data_dir.is_dir():
+        os.makedirs(data_dir)
     data_names = []
+
+    # Create the individual configuration files.
     for version, last_update, url in datasets:
         data_fp = Path(data_dir, f"cord19_{version}_all.csv")
         data_names.append(data_fp.stem + ".json")
@@ -136,8 +144,8 @@ def create_complete_configs(from_file=True):
         create_config("cord19-all", data_fp.name, last_update=last_update,
                       title=title, dataset_id=dataset_id, url=url)
 
+    # Create the index for the versioned datasets.
     index_fp = Path("..", "config", "cord19-all", "index.json")
-
     meta_data = {
         "title": "CORD-19",
         "base_id": "cord19-all",
@@ -148,25 +156,21 @@ def create_complete_configs(from_file=True):
         json.dump(meta_data, f, indent=4)
 
 
-def create_preprint_configs(from_file=True):
-    if not from_file:
-        datasets = [
-            ("v1", "2020-03-29", "https://doi.org/10.6084/m9.figshare.12033672.v7"),  #noqa
-            ("v2", "2020-04-05", "https://doi.org/10.6084/m9.figshare.12033672.v8"),  #noqa
-            ("v3", "2020-04-12", "https://doi.org/10.6084/m9.figshare.12033672.v10"),  #noqa
-            ("v4", "2020-04-19", "https://doi.org/10.6084/m9.figshare.12033672.v12"),  #noqa
-            ("v5", "2020-04-26", "https://doi.org/10.6084/m9.figshare.12033672.v13"),  #noqa
-            ("v6", "2020-05-03", "https://doi.org/10.6084/m9.figshare.12033672.v14"),  #noqa
-        ]
+def create_preprint_configs():
+    '''Create the configuration files for the Covid-19 preprints
 
-        with open("covid19-preprints.json", "w") as f:
-            json.dump(datasets, f, indent=4)
-    else:
-        with open("covid19-preprints.json", "r") as f:
-            datasets = json.load(f)
+    It needs as input the scripts/covid19-preprints.json file, which is an
+    ascending list of versions of the dataset. Each item should be a tuple/list
+    of the version (e.g. "v1"), last update ("yyyy-mm-dd") and link to a web
+    page for the dataset.
+    '''
+    with open("covid19-preprints.json", "r") as f:
+        datasets = json.load(f)
 
     template = deepcopy(COVID19_PREP_TEMPLATE)
     json_names = []
+
+    # Create individual configuration files.
     for version, last_update, link in datasets:
         file_name = f"covid19_preprints_{version}.csv"
         dataset_id = f"covid19-preprints-{version}"
@@ -182,12 +186,15 @@ def create_preprint_configs(from_file=True):
         "type": "versioned",
         "filenames": json_names,
     }
+
+    # Create the index.
     index_fp = Path("..", "config", "covid19-preprints", "index.json")
     with open(index_fp, "w") as f:
         json.dump(meta_data, fp=f, indent=4)
 
 
 def create_index():
+    'Create the index file that lists all (versioned) datasets'
     meta_data = ["cord19-2020", "cord19-all", "covid19-preprints"]
     index_fp = Path("..", "config", "index.json")
     with open(index_fp, "w") as f:
