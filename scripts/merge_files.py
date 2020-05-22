@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+'''
+Merge the configuration files for the datasets into a single file.
+The scripts has to run in the "scripts" directory.
+'''
 
 import json
 from pathlib import Path
@@ -10,6 +14,7 @@ def main():
         all_dirs = json.load(f)
 
     all_config = {}
+    # Iterate over all datasets in index.json.
     for dir_ in all_dirs:
         dataset_dir = Path(base_dir, dir_)
         with open(Path(dataset_dir, "index.json")) as f:
@@ -20,6 +25,8 @@ def main():
                 configs.append(json.load(f))
         index.pop("filenames")
         index["configs"] = configs
+
+        # Currently, the key "dir_" is not actually used.
         all_config[dir_] = index
 
     with open(Path(base_dir, "all.json"), "w") as f:
