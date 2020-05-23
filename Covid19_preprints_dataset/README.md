@@ -8,7 +8,7 @@ The most recent version of the dataset can be downloaded here (csv):
 [https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv](https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv).
 All versions are archived on [Figshare](https://doi.org/10.6084/m9.figshare.12033672).
 
-Version 7 of the dataset (dated May 10, 2020) contains metadata of 8.7K preprints related to COVID-19 from > 15 preprint servers.
+Version 8 of the dataset (dated May 17, 2020) contains metadata of 8.9K preprints related to COVID-19 from > 15 preprint servers.
 
 ![Covid19 preprints](https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/outputs/figures/covid19_preprints_day_cumulative.png)
 
@@ -27,4 +27,4 @@ The script used for the workflow is described here:
 [Covid19_preprints_processing.R](Covid19_preprints_processing.R)
 
 The Covid19 preprints dataset is updated weekly and will be made available in ASReview shortly after.
-The current datasets is **version 7 (released 2020-05-10)**
+The current datasets is **version 8 (released 2020-05-17)**
