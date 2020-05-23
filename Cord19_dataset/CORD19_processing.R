@@ -41,8 +41,6 @@ version <- 12
 last_update <- "2020-05-19"
 url <- url12
 
-url_latest <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
-
 #---------------------------------------------
 
 #inspect first lines of full dataset to view columns
