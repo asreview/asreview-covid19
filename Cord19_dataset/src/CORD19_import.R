@@ -13,13 +13,13 @@ seeCORDfull <- function(url){
 #
 getCORDfull <- function(url){
   df <- read_csv(url, 
-                 col_types = cols(mag_id = col_character(), 
+                 col_types = cols(pubmed_id = col_character(),
+                                  mag_id = col_character(), 
                                   who_covidence_id = col_character(),
-                                  arxiv_id = col_character(), #from v10 onwards
-                                  journal = col_character(), 
-                                  pmcid = col_character(), 
+                                  arxiv_id = col_character(), #from v10 onwards 
                                   publish_time = col_character(), 
-                                  pubmed_id = col_character()))
+                                  pubmed_id = col_character(),
+                                  s2_id = col_character()))
 
   return(df)
 }

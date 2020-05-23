@@ -7,5 +7,6 @@
   ["v8", "2020-04-17", "https://zenodo.org/record/3756191/files/metadata.csv"],
   ["v9", "2020-04-24", "https://zenodo.org/record/3765923/files/metadata.csv"],
   ["v10", "2020-05-01", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv"],
-  ["v11", "2020-05-12", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv"]
+  ["v11", "2020-05-12", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv"],
+  ["v12", "2020-05-19", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv"]
 ]

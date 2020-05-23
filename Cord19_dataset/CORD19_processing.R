@@ -16,11 +16,6 @@ source("src/CORD19_import.R")
 source("src/CORD19_create_subset.R")
 source("src/CORD19_get_stats.R")
 
-#set email in Renviron
-file.edit("~/.Renviron")
-#add email address to be shared with Crossref:
-#crossref_email = name@example.com
-
 
 #--------------------------------------------------------
 #STILL TO DO
@@ -39,11 +34,14 @@ url8 <- "https://zenodo.org/record/3756191/files/metadata.csv" #20200417
 url9 <- "https://zenodo.org/record/3765923/files/metadata.csv" #20200424
 url10 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv" #20200501
 url11 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv" #20200512
+url12 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv" #20200519
 
 #set current version number and url
-version <- 11
-last_update <- "2020-05-12"
-url <- url11
+version <- 12
+last_update <- "2020-05-19"
+url <- url12
+
+url_latest <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
 
 #---------------------------------------------
 
@@ -56,6 +54,10 @@ CORD19 <- getCORDfull(url)
 #Add date columns - setting date format will only keep properly formatted entries
 CORD19 <- CORD19 %>%
   mutate(date = as.Date(publish_time))
+
+#manual counts check 
+#counts_current <- CORD19 %>%
+#  summarise_all(~ sum(!is.na(.)))
 
 #--------------------------------------------------------
 #create subset from 20191201
