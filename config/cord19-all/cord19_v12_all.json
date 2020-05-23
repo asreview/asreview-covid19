@@ -1,0 +1,20 @@
+{
+    "description": "A free dataset on publications on the corona virus.",
+    "authors": [
+        "Allen institute for AI"
+    ],
+    "topic": "Covid-19",
+    "link": "https://pages.semanticscholar.org/coronavirus-research",
+    "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+    "license": "Covid dataset license",
+    "dataset_id": "cord19-v12",
+    "title": "CORD-19 v12",
+    "last_update": "2020-05-19",
+    "sha512": "d05022909444b3ee74bd5910c044ff7a828febe355aa0d21c799494a576091c3e300883afb557fbb410b6e90e05db6904b3f48d506ea2c69e3712069a13da7f4",
+    "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv",
+    "statistics": {
+        "n_papers": 128492,
+        "n_missing_title": 28,
+        "n_missing_abstract": 26881
+    }
+}

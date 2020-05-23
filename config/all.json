@@ -163,6 +163,26 @@
                     "n_missing_title": 3,
                     "n_missing_abstract": 4559
                 }
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-v12",
+                "title": "CORD-19 v12 since Dec. 2019",
+                "last_update": "2020-05-19",
+                "sha512": "76254b45dfba2420dfcb655620c3d760747c29d9021209cdc814d0a1440a48c8c2531dbadedfa5a869afcbde92e7a0eb84109620a6409baa1d67fa498d4614bb",
+                "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v12_20191201.csv",
+                "statistics": {
+                    "n_papers": 36062,
+                    "n_missing_title": 20,
+                    "n_missing_abstract": 13091
+                }
             }
         ]
     },
@@ -350,6 +370,26 @@
                     "n_missing_title": 163,
                     "n_missing_abstract": 12559
                 }
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-v12",
+                "title": "CORD-19 v12",
+                "last_update": "2020-05-19",
+                "sha512": "d05022909444b3ee74bd5910c044ff7a828febe355aa0d21c799494a576091c3e300883afb557fbb410b6e90e05db6904b3f48d506ea2c69e3712069a13da7f4",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv",
+                "statistics": {
+                    "n_papers": 128492,
+                    "n_missing_title": 28,
+                    "n_missing_abstract": 26881
+                }
             }
         ]
     },
@@ -503,6 +543,27 @@
                     "n_papers": 8737,
                     "n_missing_title": 0,
                     "n_missing_abstract": 2285
+                }
+            },
+            {
+                "description": "Preprints related to COVID-19",
+                "authors": [
+                    "Nicholas Fraser",
+                    "Bianca Kramer"
+                ],
+                "topic": "Covid-19",
+                "link": "https://doi.org/10.6084/m9.figshare.12033672.v17",
+                "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",
+                "license": "CC0",
+                "dataset_id": "covid19-preprints-v8",
+                "title": "Covid-19 preprints v8",
+                "last_update": "2020-05-17",
+                "sha512": "951dc20f25678ff84b6d178576afe5bba4d39c062d605ce56eae9f3794be12150eda92807cb474f6c985ace2552a7420d4767069de85a3e69fc3407e202f7111",
+                "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/covid19-preprints/covid19_preprints_v8.csv",
+                "statistics": {
+                    "n_papers": 8971,
+                    "n_missing_title": 0,
+                    "n_missing_abstract": 2617
                 }
             }
         ]
