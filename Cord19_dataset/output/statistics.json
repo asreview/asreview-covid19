@@ -167,5 +167,23 @@
       "n_missing_title": 20,
       "n_missing_abstract": 13091
     }
+  },
+  "v13": {
+    "version": 13,
+    "last_update": "2020-05-26",
+    "dates": {
+      "total": 134206,
+      "missing_dates_prior": 60903
+    },
+    "all": {
+      "n_papers": 134206,
+      "n_missing_title": 30,
+      "n_missing_abstract": 28641
+    },
+    "subset": {
+      "n_papers": 41535,
+      "n_missing_title": 22,
+      "n_missing_abstract": 14833
+    }
   }
 }
