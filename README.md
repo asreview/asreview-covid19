@@ -12,10 +12,10 @@ The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is
 
 The most recent version of the dataset can be downloaded here:  
 [https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv).  
-Older versions are archived on [Zenodo](https://doi.org/10.5281/zenodo.3715505).
+Older versions are archived on [Zenodo](https://doi.org/10.5281/zenodo.3715505) and [Amazon AWS](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html).
 
 ## COVID19 preprints dataset
-The [COVID19 preprints dataset](https://github.com/nicholasmfraser/covid19_preprints) is created by [Nicholas Fraser](https://github.com/nicholasmfraser) and [Bianca Kramer](https://github.com/bmkramer), by collecting metadata of COVID19-related preprints from over 15 preprint servers with DOIs registered with Crossref or DataCite, and from arXiv. The dataset contains metadata of >8K preprints on COVID-19 and coronavirus-related research. The COVID19 preprints dataset is updated weekly.
+The [COVID19 preprints dataset](https://github.com/nicholasmfraser/covid19_preprints) is created by [Nicholas Fraser](https://github.com/nicholasmfraser) and [Bianca Kramer](https://github.com/bmkramer), by collecting metadata of COVID19-related preprints from over 15 preprint servers with DOIs registered with Crossref or DataCite, and from arXiv. The dataset contains metadata of >10K preprints on COVID-19 and coronavirus-related research. The COVID19 preprints dataset is updated weekly.
 
 The most recent version of the dataset can be downloaded here (csv):  
 [https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv](https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv).  
@@ -30,7 +30,7 @@ Two versions of the CORD-19 dataset (publications relating to COVID-19) are made
 - CORD-19 dataset with publications from December 2019 onwards
 - COVID19 preprints dataset
 
-The current datasets are based on **CORD-19 version 12 (released 2020-05-19)** and **COVID19 preprints version 9 (released 2020-05-17)**
+The current datasets are based on **CORD-19 version 12 (released 2020-05-19)** and **COVID19 preprints version 9 (released 2020-05-24)**
 
 The datasets are updated in ASReview plugin shortly after their release. 
 
