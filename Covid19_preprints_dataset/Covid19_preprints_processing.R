@@ -31,12 +31,13 @@ url13 <- "https://ndownloader.figshare.com/articles/12033672/versions/13" #20200
 url14 <- "https://ndownloader.figshare.com/articles/12033672/versions/14" #20200503 v6
 url16 <- "https://ndownloader.figshare.com/articles/12033672/versions/16" #20200510 v7
 url17 <- "https://ndownloader.figshare.com/articles/12033672/versions/17" #20200517 v8
+url18 <- "https://ndownloader.figshare.com/articles/12033672/versions/18" #20200524 v9
 
 #set current version number and url
-figshare_version <- 17
-version <- 8
-last_update <- "2020-05-17"
-url <- url17
+figshare_version <- 18
+version <- 9
+last_update <- "2020-05-24"
+url <- url18
 
 #read and extract zip file
 getFiles(url)
