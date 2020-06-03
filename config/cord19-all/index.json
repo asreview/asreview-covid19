@@ -12,6 +12,8 @@
         "cord19_v9_all.json",
         "cord19_v10_all.json",
         "cord19_v11_all.json",
-        "cord19_v12_all.json"
+        "cord19_v12_all.json",
+        "cord19_v13_all.json",
+        "cord19_v14_all.json"
     ]
 }

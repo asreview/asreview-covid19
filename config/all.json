@@ -183,6 +183,46 @@
                     "n_missing_title": 20,
                     "n_missing_abstract": 13091
                 }
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-v13",
+                "title": "CORD-19 v13 since Dec. 2019",
+                "last_update": "2020-05-26",
+                "sha512": "3e3d78b3cfed91c80385a408c992707581147e39364c1cf10931c74003254c7138144013fc76151b266fd2fd9ae36743b08c7781528a2a427f0bb87fd285ac3d",
+                "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v13_20191201.csv",
+                "statistics": {
+                    "n_papers": 41535,
+                    "n_missing_title": 22,
+                    "n_missing_abstract": 14833
+                }
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-v14",
+                "title": "CORD-19 v14 since Dec. 2019",
+                "last_update": "2020-06-02",
+                "sha512": "ae55d1e88925d610311f5c7c4f9a98f672a6dfa759805f651b1dcfa4c64c8c062cd30138273e84a92b159b94e572c5ec01ada00f01d222bd1432ab0101531872",
+                "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_v14_20191201.csv",
+                "statistics": {
+                    "n_papers": 48009,
+                    "n_missing_title": 31,
+                    "n_missing_abstract": 17291
+                }
             }
         ]
     },
@@ -390,6 +430,46 @@
                     "n_missing_title": 28,
                     "n_missing_abstract": 26881
                 }
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-v13",
+                "title": "CORD-19 v13",
+                "last_update": "2020-05-26",
+                "sha512": "f013adc6461afb4615b5b632363c3104699db36242fc7e5bc030b4e72399c3fd0197bbb7515225dd6e96cb541559d607bd73949a68a7ffc145cd9f7da400daae",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-26/metadata.csv",
+                "statistics": {
+                    "n_papers": 134206,
+                    "n_missing_title": 30,
+                    "n_missing_abstract": 28641
+                }
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-v14",
+                "title": "CORD-19 v14",
+                "last_update": "2020-06-02",
+                "sha512": "0cfa0e3114df49299380aad7e0e56ca058fe800340b41b94e22f7efc91ff9272e44064db9823fe394da1dd9b404b2b13001d36d5895ba083092740d9dc9f0c7f",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-02/metadata.csv",
+                "statistics": {
+                    "n_papers": 141109,
+                    "n_missing_title": 39,
+                    "n_missing_abstract": 31130
+                }
             }
         ]
     },
@@ -564,6 +644,27 @@
                     "n_papers": 8971,
                     "n_missing_title": 0,
                     "n_missing_abstract": 2617
+                }
+            },
+            {
+                "description": "Preprints related to COVID-19",
+                "authors": [
+                    "Nicholas Fraser",
+                    "Bianca Kramer"
+                ],
+                "topic": "Covid-19",
+                "link": "https://doi.org/10.6084/m9.figshare.12033672.v18",
+                "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",
+                "license": "CC0",
+                "dataset_id": "covid19-preprints-v9",
+                "title": "Covid-19 preprints v9",
+                "last_update": "2020-05-24",
+                "sha512": "c987f1edf2a777796eea9df6ef2d02f3deda927c7e8b367b2859c35c2fa493c14c63ae3f0bc19ffcd0ae31a46b8f306470f00fa4294730b959d00d696eb441d2",
+                "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/covid19-preprints/covid19_preprints_v9.csv",
+                "statistics": {
+                    "n_papers": 10067,
+                    "n_missing_title": 0,
+                    "n_missing_abstract": 2917
                 }
             }
         ]
