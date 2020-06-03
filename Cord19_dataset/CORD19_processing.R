@@ -36,19 +36,19 @@ url10 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05
 url11 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv" #20200512
 url12 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv" #20200519
 url13 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-26/metadata.csv" #20200526
-
+url14 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-02/metadata.csv" #20200602
 
 #set current version number and url
-version <- 13
-last_update <- "2020-05-26"
-url <- url13
+version <- 14
+last_update <- "2020-06-02"
+url <- url14
 
 #---------------------------------------------
 
 #inspect first lines of full dataset to view columns
 CORD19 <- seeCORDfull(url)
 
-#read full dataset, set number of columns to character, to read all values in
+#read full dataset, set a number of columns to character, to read all values in
 CORD19 <- getCORDfull(url)
 
 #Add date columns - setting date format will only keep properly formatted entries
