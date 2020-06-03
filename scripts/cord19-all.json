@@ -9,5 +9,6 @@
   ["v10", "2020-05-01", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv"],
   ["v11", "2020-05-12", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv"],
   ["v12", "2020-05-19", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv"],
-  ["v13", "2020-05-26", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-26/metadata.csv"]
+  ["v13", "2020-05-26", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-26/metadata.csv"],
+  ["v14", "2020-06-02", "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-02/metadata.csv"]
 ]
