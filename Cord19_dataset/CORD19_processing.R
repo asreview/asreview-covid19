@@ -35,11 +35,13 @@ url9 <- "https://zenodo.org/record/3765923/files/metadata.csv" #20200424
 url10 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv" #20200501
 url11 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv" #20200512
 url12 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv" #20200519
+url13 <- "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-26/metadata.csv" #20200526
+
 
 #set current version number and url
-version <- 12
-last_update <- "2020-05-19"
-url <- url12
+version <- 13
+last_update <- "2020-05-26"
+url <- url13
 
 #---------------------------------------------
 
