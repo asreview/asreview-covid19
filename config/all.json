@@ -240,16 +240,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v3",
-                "title": "CORD-19 v3",
+                "dataset_id": "cord19-2020-03-13",
+                "title": "CORD-19 2020-03-13",
                 "last_update": "2020-03-13",
-                "sha512": "6741211cc47c04897b253a3eaf2d18e6d57391530f8cebe7d8c84310f82c90b2c55071157b418fb7b627302adbfae8838fb8c071516288b320b13103ac1ec7fc",
-                "url": "https://zenodo.org/record/3715506/files/all_sources_metadata_2020-03-13.csv",
-                "statistics": {
-                    "n_papers": 29500,
-                    "n_missing_title": 9,
-                    "n_missing_abstract": 2591
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-13/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -260,16 +254,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v4",
-                "title": "CORD-19 v4",
+                "dataset_id": "cord19-2020-03-20",
+                "title": "CORD-19 2020-03-20",
                 "last_update": "2020-03-20",
-                "sha512": "517e2399767aa1d387baaa07c42ef6ac9a5aec1e3a41f832974ee712413272429f2a5ea658b32bb7330becac70df1ee5262ae1ddebb258a02aaaa2d4b47335cc",
-                "url": "https://zenodo.org/record/3727291/files/metadata.csv",
-                "statistics": {
-                    "n_papers": 44220,
-                    "n_missing_title": 224,
-                    "n_missing_abstract": 8414
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-20/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -280,16 +268,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v5",
-                "title": "CORD-19 v5",
+                "dataset_id": "cord19-2020-03-27",
+                "title": "CORD-19 2020-03-27",
                 "last_update": "2020-03-27",
-                "sha512": "a6d8e7a4dd3f0194840129b7368fd97354b44a44fc0d06addfc9a27f3c08e19ef88ff568effb92994895353f7e9d771932f354bd619ee2242d4262f7561f41fe",
-                "url": "https://zenodo.org/record/3731937/files/metadata.csv",
-                "statistics": {
-                    "n_papers": 45774,
-                    "n_missing_title": 157,
-                    "n_missing_abstract": 7861
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-27/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -300,16 +282,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v6",
-                "title": "CORD-19 v6",
+                "dataset_id": "cord19-2020-04-03",
+                "title": "CORD-19 2020-04-03",
                 "last_update": "2020-04-03",
-                "sha512": "5ba3738e603e2b23c403a46fb2620360415ba3419b09b071f5a5ca16a96422aa78a5456cba7abb18279b6510174273694961b72c28006620c7f28571125cfae2",
-                "url": "https://zenodo.org/record/3739581/files/metadata.csv",
-                "statistics": {
-                    "n_papers": 47298,
-                    "n_missing_title": 158,
-                    "n_missing_abstract": 8250
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-03/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -320,16 +296,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v7",
-                "title": "CORD-19 v7",
+                "dataset_id": "cord19-2020-04-10",
+                "title": "CORD-19 2020-04-10",
                 "last_update": "2020-04-10",
-                "sha512": "389c59484172005dac7633c9707bdfb50813fa8e2c9ee9dad930efd0f51116c61b171d2846c955ea0b118a5dc5136338d30446724c115b9348eb2946ec78e1eb",
-                "url": "https://zenodo.org/record/3748055/files/metadata.csv",
-                "statistics": {
-                    "n_papers": 51078,
-                    "n_missing_title": 158,
-                    "n_missing_abstract": 8726
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-10/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -340,16 +310,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v8",
-                "title": "CORD-19 v8",
+                "dataset_id": "cord19-2020-04-17",
+                "title": "CORD-19 2020-04-17",
                 "last_update": "2020-04-17",
-                "sha512": "9f0330717c43c67426218b7ff052fced6962e7dad0fb70292ef2bef0a03872e2c02b7233ad141ab1f200329884089f94253ab757899fb1a94e49bb3cd250d681",
-                "url": "https://zenodo.org/record/3756191/files/metadata.csv",
-                "statistics": {
-                    "n_papers": 52398,
-                    "n_missing_title": 158,
-                    "n_missing_abstract": 9230
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-17/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -360,16 +324,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v9",
-                "title": "CORD-19 v9",
+                "dataset_id": "cord19-2020-04-24",
+                "title": "CORD-19 2020-04-24",
                 "last_update": "2020-04-24",
-                "sha512": "7e8282e42c59182529f0c00f710c45ca6c7822ab21a66e52197ccf159510d12756c5c7199edb8e561fbb1ce8f71d274405de31d8f8060a7df2460df1fedd7fb5",
-                "url": "https://zenodo.org/record/3765923/files/metadata.csv",
-                "statistics": {
-                    "n_papers": 57366,
-                    "n_missing_title": 163,
-                    "n_missing_abstract": 10519
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-04-24/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -380,16 +338,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v10",
-                "title": "CORD-19 v10",
+                "dataset_id": "cord19-2020-05-01",
+                "title": "CORD-19 2020-05-01",
                 "last_update": "2020-05-01",
-                "sha512": "d4f98c9e416f5427529a60ba0ecf67b513e32eaef087643f8e6b9dbd7b002bfa35ff94f2fa4dc9df633b870d36381fb92cf3655e80995eeafabb20c48fc4ff61",
-                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv",
-                "statistics": {
-                    "n_papers": 59887,
-                    "n_missing_title": 163,
-                    "n_missing_abstract": 11130
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-01/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -400,16 +352,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v11",
-                "title": "CORD-19 v11",
+                "dataset_id": "cord19-2020-05-12",
+                "title": "CORD-19 2020-05-12",
                 "last_update": "2020-05-12",
-                "sha512": "52419dd3b68a19f72a791887c83326b9330b77581ef10ebb6597cbbadde8bedc885c8de75f6e6284dd6657231d96d4734c3f0bdd5d36a6c52f4343da13e196f4",
-                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv",
-                "statistics": {
-                    "n_papers": 63571,
-                    "n_missing_title": 163,
-                    "n_missing_abstract": 12559
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-12/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -420,16 +366,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v12",
-                "title": "CORD-19 v12",
+                "dataset_id": "cord19-2020-05-19",
+                "title": "CORD-19 2020-05-19",
                 "last_update": "2020-05-19",
-                "sha512": "d05022909444b3ee74bd5910c044ff7a828febe355aa0d21c799494a576091c3e300883afb557fbb410b6e90e05db6904b3f48d506ea2c69e3712069a13da7f4",
-                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv",
-                "statistics": {
-                    "n_papers": 128492,
-                    "n_missing_title": 28,
-                    "n_missing_abstract": 26881
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-19/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -440,16 +380,10 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v13",
-                "title": "CORD-19 v13",
+                "dataset_id": "cord19-2020-05-26",
+                "title": "CORD-19 2020-05-26",
                 "last_update": "2020-05-26",
-                "sha512": "f013adc6461afb4615b5b632363c3104699db36242fc7e5bc030b4e72399c3fd0197bbb7515225dd6e96cb541559d607bd73949a68a7ffc145cd9f7da400daae",
-                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-26/metadata.csv",
-                "statistics": {
-                    "n_papers": 134206,
-                    "n_missing_title": 30,
-                    "n_missing_abstract": 28641
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-26/metadata.csv"
             },
             {
                 "description": "A free dataset on publications on the corona virus.",
@@ -460,16 +394,206 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-v14",
-                "title": "CORD-19 v14",
+                "dataset_id": "cord19-2020-05-27",
+                "title": "CORD-19 2020-05-27",
+                "last_update": "2020-05-27",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-27/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-05-28",
+                "title": "CORD-19 2020-05-28",
+                "last_update": "2020-05-28",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-28/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-05-29",
+                "title": "CORD-19 2020-05-29",
+                "last_update": "2020-05-29",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-29/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-05-30",
+                "title": "CORD-19 2020-05-30",
+                "last_update": "2020-05-30",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-30/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-05-31",
+                "title": "CORD-19 2020-05-31",
+                "last_update": "2020-05-31",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-05-31/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-01",
+                "title": "CORD-19 2020-06-01",
+                "last_update": "2020-06-01",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-01/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-02",
+                "title": "CORD-19 2020-06-02",
                 "last_update": "2020-06-02",
-                "sha512": "0cfa0e3114df49299380aad7e0e56ca058fe800340b41b94e22f7efc91ff9272e44064db9823fe394da1dd9b404b2b13001d36d5895ba083092740d9dc9f0c7f",
-                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-02/metadata.csv",
-                "statistics": {
-                    "n_papers": 141109,
-                    "n_missing_title": 39,
-                    "n_missing_abstract": 31130
-                }
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-02/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-03",
+                "title": "CORD-19 2020-06-03",
+                "last_update": "2020-06-03",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-03/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-04",
+                "title": "CORD-19 2020-06-04",
+                "last_update": "2020-06-04",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-04/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-05",
+                "title": "CORD-19 2020-06-05",
+                "last_update": "2020-06-05",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-05/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-06",
+                "title": "CORD-19 2020-06-06",
+                "last_update": "2020-06-06",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-06/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-07",
+                "title": "CORD-19 2020-06-07",
+                "last_update": "2020-06-07",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-07/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-08",
+                "title": "CORD-19 2020-06-08",
+                "last_update": "2020-06-08",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-08/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-09",
+                "title": "CORD-19 2020-06-09",
+                "last_update": "2020-06-09",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-09/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-2020-06-10",
+                "title": "CORD-19 2020-06-10",
+                "last_update": "2020-06-10",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-06-10/metadata.csv"
             }
         ]
     },

@@ -16,30 +16,19 @@ import pandas as pd
 from asreviewcontrib.statistics import DataStatistics
 
 
-# Template for both the cord-all and cord-2020 datasets.
-CORD19_TEMPLATE = {
-        "description": "A free dataset on publications on the corona virus.",
-        "authors": ["Allen institute for AI"],
-        "topic": "Covid-19",
-        "link": "https://pages.semanticscholar.org/coronavirus-research",
-        "img_url": ("https://pages.semanticscholar.org/hs-fs/hubfs/"
-                    "covid-image.png?width=300&name=covid-image.png"),
-        "license": "Covid dataset license",
-}
-
-
-# Template for the Covid19 preprint datasets.
-COVID19_PREP_TEMPLATE = {
-    "description": "Preprints related to COVID-19",
-    "authors": ["Nicholas Fraser", "Bianca Kramer"],
-    "topic": "Covid-19",
-    "link": "https://doi.org/10.6084/m9.figshare.12033672.v12",
-    "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",  #noqa
-    "license": "CC0",
-}
-
 CORD19_OVERVIEW_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html"
 CORD19_METADATA_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/{}/metadata.csv"
+
+# Template for both the cord-all and cord-2020 datasets.
+CORD19_TEMPLATE = {
+    "description": "A free dataset on publications on the corona virus.",
+    "authors": ["Allen institute for AI"],
+    "topic": "Covid-19",
+    "link": "https://pages.semanticscholar.org/coronavirus-research",
+    "img_url": ("https://pages.semanticscholar.org/hs-fs/hubfs/"
+                "covid-image.png?width=300&name=covid-image.png"),
+    "license": "Covid dataset license",
+}
 
 
 def _get_versioned_datasets(config):
@@ -98,40 +87,40 @@ def create_config(dataset, last_update, title, dataset_id,
     return config_data
 
 
-def create_2020_configs():
-    '''Create the configuration files for the Cord-19-2020 dataset
+# def create_2020_configs():
+#     '''Create the configuration files for the Cord-19-2020 dataset
 
-    It needs as input the scripts/cord19-2020.json file, which is an ascending
-    list of versions of the dataset. Each item should be a tuple/list of the
-    version (e.g. "v1") and last update ("yyyy-mm-dd").
-    '''
-    # with open("cord19-2020.json", "r") as f:
-    #     datasets = json.load(f)
+#     It needs as input the scripts/cord19-2020.json file, which is an ascending
+#     list of versions of the dataset. Each item should be a tuple/list of the
+#     version (e.g. "v1") and last update ("yyyy-mm-dd").
+#     '''
+#     # with open("cord19-2020.json", "r") as f:
+#     #     datasets = json.load(f)
 
-    # Create the individual configuration files.
-    datasets_conf = []
+#     # Create the individual configuration files.
+#     datasets_conf = []
 
-    for version, last_update in datasets:
-        file_name = f"cord19_{version}_20191201.csv"
-        title = f"CORD-19 {version} since Dec. 2019"
-        dataset_id = f"cord19-2020-{version}"
-        dataset_config = create_config(
-            "cord19-2020",
-            file_name,
-            last_update,
-            title,
-            dataset_id
-        )
-        datasets_conf.append(dataset_config)
+#     for version, last_update in datasets:
+#         file_name = f"cord19_{version}_20191201.csv"
+#         title = f"CORD-19 {version} since Dec. 2019"
+#         dataset_id = f"cord19-2020-{version}"
+#         dataset_config = create_config(
+#             "cord19-2020",
+#             file_name,
+#             last_update,
+#             title,
+#             dataset_id
+#         )
+#         datasets_conf.append(dataset_config)
 
-    meta_data = {
-        "title": "CORD-19-2020",
-        "base_id": "cord19-2020",
-        "type": "versioned",
-        "configs": datasets_conf,
-    }
+#     meta_data = {
+#         "title": "CORD-19-2020",
+#         "base_id": "cord19-2020",
+#         "type": "versioned",
+#         "configs": datasets_conf,
+#     }
 
-    return meta_data
+#     return meta_data
 
 
 def render_cord19_config():
@@ -142,13 +131,14 @@ def render_cord19_config():
     version (e.g. "v1"), last update ("yyyy-mm-dd") and url to the dataset.
     '''
 
-    with open(Path("..", "config", "all.json"), "r") as f:
+    with open(Path("config", "all.json"), "r") as f:
         current_config = json.load(f)["cord19-all"]
         existing_versions = _get_versioned_datasets(current_config)
 
     # download and construct dataset
     df = pd.read_html(CORD19_OVERVIEW_URL)[0]
-    df["metadata_url"] = [CORD19_METADATA_URL.format(x) for x in df["Date"].tolist()]
+    df["metadata_url"] = [CORD19_METADATA_URL.format(
+        x) for x in df["Date"].tolist()]
     df["version"] = df["Date"]
     df.sort_values("Date", ascending=True, inplace=True)
 
@@ -183,62 +173,14 @@ def render_cord19_config():
     return meta_data
 
 
-def create_preprint_configs():
-    '''Create the configuration files for the Covid-19 preprints
-
-    It needs as input the scripts/covid19-preprints.json file, which is an
-    ascending list of versions of the dataset. Each item should be a tuple/list
-    of the version (e.g. "v1"), last update ("yyyy-mm-dd") and link to a web
-    page for the dataset.
-    '''
-    with open("covid19-preprints.json", "r") as f:
-        datasets = json.load(f)
-
-    template = deepcopy(COVID19_PREP_TEMPLATE)
-    json_names = []
-
-    # Create individual configuration files.
-    for version, last_update, link in datasets:
-        file_name = f"covid19_preprints_{version}.csv"
-        dataset_id = f"covid19-preprints-{version}"
-        title = f"Covid-19 preprints {version}"
-        template["link"] = link
-        create_config("covid19-preprints", file_name, last_update, title,
-                      dataset_id, template=template)
-        json_names.append(Path(file_name).stem + ".json")
-
-    meta_data = {
-        "title": "Covid-19 preprints",
-        "base_id": "covid19-preprints",
-        "type": "versioned",
-        "filenames": json_names,
-    }
-
-    # Create the index.
-    index_fp = Path("..", "config", "covid19-preprints", "index.json")
-    with open(index_fp, "w") as f:
-        json.dump(meta_data, fp=f, indent=4)
-
-
-def create_index():
-    'Create the index file that lists all (versioned) datasets'
-    meta_data = ["cord19-2020", "cord19-all", "covid19-preprints"]
-    index_fp = Path("..", "config", "index.json")
-    with open(index_fp, "w") as f:
-        json.dump(meta_data, f)
-
-
 if __name__ == "__main__":
     # create_2020_configs()
 
     # create config file for cord19 full
     cord_all_config = render_cord19_config()
 
-    # create_preprint_configs()
-    # create_index()
-
     # Update config file
-    config_fp = Path("..", "config", "all.json")
+    config_fp = Path("config", "all.json")
 
     with open(config_fp, "r") as f:
         current_config = json.load(f)
