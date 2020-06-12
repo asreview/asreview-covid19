@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-'''
+"""
 Create configuration data structure for each of the three datasets.
 It will read three (minimal) JSON files as input.
-'''
+"""
 
 from copy import deepcopy
 import json
@@ -18,6 +18,8 @@ from asreviewcontrib.statistics import DataStatistics
 
 CORD19_OVERVIEW_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html"
 CORD19_METADATA_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/{}/metadata.csv"
+CORD19_METADATA_URL_LATEST = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
+
 
 # Template for both the cord-all and cord-2020 datasets.
 CORD19_TEMPLATE = {
@@ -36,10 +38,33 @@ def _get_versioned_datasets(config):
     return [x['dataset_id'] for x in config['configs']]
 
 
+def _get_cord19_datasets():
+
+    # download and construct dataset
+    df = pd.read_html(CORD19_OVERVIEW_URL)[0]
+    df["metadata_url"] = [CORD19_METADATA_URL.format(
+        x) for x in df["Date"].tolist()]
+    df["version"] = df["Date"]
+    df.sort_values("Date", ascending=True, inplace=True)
+
+    return df
+
+
+def get_latest_cord19_subset(url):
+    """This function creates a 2020 subset of the CORD dataset."""
+
+    df = pd.read_csv(url)
+    df = df[(df["publish_time"] >= "2019-12-01") | (df["publish_time"] == "2020") ]
+    print(len(df))
+    # sort the dataset to prevent the git repo from growing to large
+    df.sort_values("cord_uid", inplace=True)
+
+    return df
+
+
 def create_config(dataset, last_update, title, dataset_id,
-                  template=CORD19_TEMPLATE,
-                  url=None):
-    '''Create a new configuration file for a (version of) a dataset.
+                  template=CORD19_TEMPLATE, url=None):
+    """Create a new configuration file for a (version of) a dataset.
 
     Arguments
     ---------
@@ -59,7 +84,7 @@ def create_config(dataset, last_update, title, dataset_id,
     url: str
         Url to dataset. If set to None, it will be assumed to be on the
         ASReview-covid19 repository: datasets/{dataset}/{file_name}
-    '''
+    """
     # data_fp = Path("..", "datasets", dataset, file_name)
 
     # if url is None:
@@ -87,60 +112,65 @@ def create_config(dataset, last_update, title, dataset_id,
     return config_data
 
 
-# def create_2020_configs():
-#     '''Create the configuration files for the Cord-19-2020 dataset
+def render_cord19_2020_config():
+    """Create the configuration files for the Cord-19-2020 dataset"""
 
-#     It needs as input the scripts/cord19-2020.json file, which is an ascending
-#     list of versions of the dataset. Each item should be a tuple/list of the
-#     version (e.g. "v1") and last update ("yyyy-mm-dd").
-#     '''
-#     # with open("cord19-2020.json", "r") as f:
-#     #     datasets = json.load(f)
+    with open(Path("config", "all.json"), "r") as f:
+        current_config = json.load(f)["cord19-2020"]
+        existing_versions = _get_versioned_datasets(current_config)
 
-#     # Create the individual configuration files.
-#     datasets_conf = []
+    # download and construct dataset
+    df = _get_cord19_datasets().tail(1)
 
-#     for version, last_update in datasets:
-#         file_name = f"cord19_{version}_20191201.csv"
-#         title = f"CORD-19 {version} since Dec. 2019"
-#         dataset_id = f"cord19-2020-{version}"
-#         dataset_config = create_config(
-#             "cord19-2020",
-#             file_name,
-#             last_update,
-#             title,
-#             dataset_id
-#         )
-#         datasets_conf.append(dataset_config)
+    datasets_config = current_config["configs"]
 
-#     meta_data = {
-#         "title": "CORD-19-2020",
-#         "base_id": "cord19-2020",
-#         "type": "versioned",
-#         "configs": datasets_conf,
-#     }
+    # Create the individual configuration files.
+    for index, row in df[["version", "Date", "metadata_url"]].iterrows():
 
-#     return meta_data
+        df_subset_latest = get_latest_cord19_subset(CORD19_METADATA_URL_LATEST)
+        df_subset_latest.to_csv(
+            Path("datasets", "cord19-2020", "cord19_latest_20191201.csv")
+        )
+
+        version = f"cord19-{row['version']}"
+
+        # skip if the metadata is already available
+        if version in existing_versions:
+            continue
+
+        dataset_config = create_config(
+            "cord19-2020",
+            last_update=row["Date"],
+            title=f"CORD-19 {row['version']}",
+            dataset_id=version,
+            url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201.csv"
+        )
+        datasets_config.append(dataset_config)
+
+    meta_data = {
+        "title": "CORD-19-2020",
+        "base_id": "cord19-2020",
+        "type": "versioned",
+        "configs": datasets_config,
+    }
+
+    return meta_data
 
 
 def render_cord19_config():
-    '''Create the configuration files for the original Cord-19 dataset
+    """Create the configuration files for the original Cord-19 dataset
 
     It needs as input the scripts/cord19-all.json file, which is an ascending
     list of versions of the dataset. Each item should be a tuple/list of the
     version (e.g. "v1"), last update ("yyyy-mm-dd") and url to the dataset.
-    '''
+    """
 
     with open(Path("config", "all.json"), "r") as f:
         current_config = json.load(f)["cord19-all"]
         existing_versions = _get_versioned_datasets(current_config)
 
     # download and construct dataset
-    df = pd.read_html(CORD19_OVERVIEW_URL)[0]
-    df["metadata_url"] = [CORD19_METADATA_URL.format(
-        x) for x in df["Date"].tolist()]
-    df["version"] = df["Date"]
-    df.sort_values("Date", ascending=True, inplace=True)
+    df = _get_cord19_datasets()
 
     datasets_config = current_config["configs"]
 
@@ -174,7 +204,9 @@ def render_cord19_config():
 
 
 if __name__ == "__main__":
-    # create_2020_configs()
+
+    # create config file for cord19 full
+    cord_2020_config = render_cord19_2020_config()
 
     # create config file for cord19 full
     cord_all_config = render_cord19_config()
@@ -187,6 +219,7 @@ if __name__ == "__main__":
 
     # update values
     current_config["cord19-all"] = cord_all_config
+    current_config["cord19-2020"] = cord_2020_config
 
     with open(config_fp, "w") as f:
         json.dump(current_config, fp=f, indent=4)
