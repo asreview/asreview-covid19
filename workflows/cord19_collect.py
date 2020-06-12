@@ -141,7 +141,7 @@ def render_cord19_2020_config():
         dataset_config = create_config(
             "cord19-2020",
             last_update=row["Date"],
-            title=f"CORD-19 {row['version']}",
+            title=f"CORD-19 2020 (v{row['version']})",
             dataset_id=version,
             url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201.csv"
         )
@@ -186,7 +186,7 @@ def render_cord19_config():
         dataset_config = create_config(
             "cord19-all",
             last_update=row["Date"],
-            title=f"CORD-19 {row['version']}",
+            title=f"CORD-19 (v{row['version']})",
             dataset_id=version,
             url=row["metadata_url"]
         )
