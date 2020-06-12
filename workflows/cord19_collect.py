@@ -132,17 +132,17 @@ def render_cord19_2020_config():
             Path("datasets", "cord19-2020", "cord19_latest_20191201.csv")
         )
 
-        version = f"cord19-{row['version']}"
+        dataset_id = f"cord19-2020-v{row['version']}"
 
         # skip if the metadata is already available
-        if version in existing_versions:
+        if dataset_id in existing_versions:
             continue
 
         dataset_config = create_config(
             "cord19-2020",
             last_update=row["Date"],
             title=f"CORD-19 2020 (v{row['version']})",
-            dataset_id=version,
+            dataset_id=dataset_id,
             url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201.csv"
         )
         datasets_config.append(dataset_config)
@@ -177,17 +177,17 @@ def render_cord19_config():
     # Create the individual configuration files.
     for index, row in df[["version", "Date", "metadata_url"]].iterrows():
 
-        version = f"cord19-{row['version']}"
+        dataset_id = f"cord19-v{row['version']}"
 
         # skip if the metadata is already available
-        if version in existing_versions:
+        if dataset_id in existing_versions:
             continue
 
         dataset_config = create_config(
             "cord19-all",
             last_update=row["Date"],
             title=f"CORD-19 (v{row['version']})",
-            dataset_id=version,
+            dataset_id=dataset_id,
             url=row["metadata_url"]
         )
         datasets_config.append(dataset_config)
