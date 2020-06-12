@@ -2,15 +2,27 @@
 from setuptools import setup, find_namespace_packages
 from os import path
 from io import open
+import re
 
 import versioneer
 
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+
+def get_long_description():
+    """Get project description based on README"""
+    here = path.abspath(path.dirname(__file__))
+
+    # Get the long description from the README file
+    with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+        long_description = f.read()
+
+    # remove emoji
+    long_description = re.sub(r"\:[a-z_]+\:", "", long_description)
+
+    return long_description
+
 
 DEPS = {
     "config-create": "asreview-statistics",
@@ -23,19 +35,19 @@ setup(
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     description='Covid-19 related datasets for ASReview',
-    long_description=long_description,
+    long_description=get_long_description(),
     long_description_content_type='text/markdown',
     url='https://github.com/asreview/asreview-covid19',
     author='Utrecht University',
     author_email='asreview@uu.nl',
     include_package_data=True,
-#     package_data={'[covid19', ['config.json'])],
+
     classifiers=[
         # How mature is this project? Common values are
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
 
         # Pick your license as you wish
         'License :: OSI Approved :: Apache Software License',
