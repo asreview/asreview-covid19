@@ -2,6 +2,9 @@ name: "Update CORD19 config"
 on:
   schedule:
     - cron:  '0 */3 * * *'
+  push:
+    branches:
+      - master
 
 jobs:
   download:
@@ -14,7 +17,7 @@ jobs:
           python-version: '3.8'
       - name: Install Python dependencies
         run: |
-          pip install asreview-statistics pandas
+          pip install asreview-statistics pandas lxml
       - name: Download and render config
         run: |
           python workflows/cord19_collect.py
