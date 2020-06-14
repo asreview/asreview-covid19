@@ -127,7 +127,7 @@ def render_cord19_2020_config():
     # Create the individual configuration files.
     for index, row in df[["version", "Date", "metadata_url"]].iterrows():
 
-        df_subset_latest = get_latest_cord19_subset(CORD19_METADATA_URL_LATEST)
+        df_subset_latest = get_latest_cord19_subset(row['metadata_url'])
         df_subset_latest.to_csv(
             Path("datasets", "cord19-2020", "cord19_latest_20191201.csv")
         )
