@@ -8,7 +8,7 @@ The Active learning for Systematic Reviews software [ASReview](https://github.co
 To help combat the COVID-19 crisis, the ASReview team released an extension that integrates the latest scientific datasets on COVID-19 in the ASReview software. Experts can **start reviewing the latest scientific literature on COVID-19 immediately!** See [datasets](#datasets) for an overview of the datasets (daily updates).
 
 
-## Installation and usage
+## Installation, update, and usage
 
 The COVID-19 plug-in requires ASReview 0.8 or higher. Install ASReview by following the instructions in [Installation of ASReview](https://asreview.readthedocs.io/en/latest/installation.html).
 
@@ -19,6 +19,12 @@ pip install asreview-covid19
 ```
 
 The datasets are immediately available after starting ASReview (`asreview oracle`). The datasets are selectable in Step 2 of the project initialization. For more information on the usage of ASReview, please have a look at the [Quick Tour](https://asreview.readthedocs.io/en/latest/quicktour.html).
+
+Older versions of the plugin are no longer supported by ASReview>=0.9.4. Please update the plugin with: 
+
+```bash
+pip install --upgrade asreview-covid19
+```
 
 
 ## Datasets
