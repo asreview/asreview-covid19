@@ -491,7 +491,7 @@
                 "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",
                 "license": "CC0",
                 "dataset_id": "covid19-preprints-v2020-06-14",
-                "title": "CORD-19 2020 (v2020-06-14)",
+                "title": "COVID-19 preprints (v2020-06-14)",
                 "last_update": "2020-06-14",
                 "url": "https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/covid19_preprints.csv"
             }

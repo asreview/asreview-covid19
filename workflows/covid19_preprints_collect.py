@@ -109,7 +109,7 @@ def render_preprints_config():
         dataset_config = create_config(
             "cord19-2020",
             last_update=metadata['sample_date'],
-            title=f"CORD-19 2020 (v{metadata['sample_date']})",
+            title=f"COVID-19 preprints (v{metadata['sample_date']})",
             dataset_id=dataset_id,
             url=PREPRINTS_METADATA_URL_DATA
         )
