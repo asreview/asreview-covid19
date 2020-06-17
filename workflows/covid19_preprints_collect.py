@@ -107,7 +107,7 @@ def render_preprints_config():
     if dataset_id not in existing_versions:
 
         dataset_config = create_config(
-            "cord19-2020",
+            "covid19-preprints",
             last_update=metadata['sample_date'],
             title=f"COVID-19 preprints (v{metadata['sample_date']})",
             dataset_id=dataset_id,
@@ -120,8 +120,8 @@ def render_preprints_config():
         datasets_config = current_config["configs"]
 
     meta_data = {
-        "title": "CORD-19-2020",
-        "base_id": "cord19-2020",
+        "title": "COVID-19 preprints",
+        "base_id": "covid19-preprints",
         "type": "versioned",
         "configs": datasets_config,
     }

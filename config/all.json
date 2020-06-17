@@ -476,8 +476,8 @@
         ]
     },
     "covid19-preprints": {
-        "title": "CORD-19-2020",
-        "base_id": "cord19-2020",
+        "title": "COVID-19 preprints",
+        "base_id": "covid19-preprints",
         "type": "versioned",
         "configs": [
             {
