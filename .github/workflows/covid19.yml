@@ -1,4 +1,4 @@
-name: "Update CORD19 config"
+name: "Update COVID19 config"
 on:
   schedule:
     - cron:  '0 */3 * * *'
@@ -21,6 +21,7 @@ jobs:
       - name: Download and render config
         run: |
           python workflows/cord19_collect.py
+          python workflows/covid19_preprints_collect.py
       - name: Commit files
         run: |
           git config --local user.email "asreview@uu.nl"

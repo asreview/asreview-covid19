@@ -151,7 +151,7 @@ def render_cord19_2020_config():
         "title": "CORD-19-2020",
         "base_id": "cord19-2020",
         "type": "versioned",
-        "configs": datasets_config,
+        "configs": datasets_config[-1:],
     }
 
     return meta_data
