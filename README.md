@@ -10,7 +10,7 @@ To help combat the COVID-19 crisis, the ASReview team released an extension that
 
 ## Installation, update, and usage
 
-The COVID-19 plug-in requires ASReview 0.8 or higher. Install ASReview by following the instructions in [Installation of ASReview](https://asreview.readthedocs.io/en/latest/installation.html).
+The COVID-19 plug-in requires ASReview 0.9.4 or higher. Install ASReview by following the instructions in [Installation of ASReview](https://asreview.readthedocs.io/en/latest/installation.html).
 
 Install the extension with pip:
 
