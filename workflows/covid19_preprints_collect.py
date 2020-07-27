@@ -27,7 +27,7 @@ COVID19_PREP_TEMPLATE = {
     "authors": ["Nicholas Fraser", "Bianca Kramer"],
     "topic": "Covid-19",
     "link": "https://doi.org/10.6084/m9.figshare.12033672.v12",
-    "img_url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/Covid19_preprints_dataset/preprints-card-image.png",  #noqa
+    "img_url": "https://github.com/asreview/asreview-covid19/blob/master/preprints-card-image.png?raw=true",  #noqa
     "license": "CC0",
 }
 
