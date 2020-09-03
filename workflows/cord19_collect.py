@@ -129,7 +129,7 @@ def render_cord19_2020_config():
 
         df_subset_latest = get_latest_cord19_subset(row['metadata_url'])
         df_subset_latest.to_csv(
-            Path("datasets", "cord19-2020", "cord19_latest_20191201.csv")
+            Path("datasets", "cord19-2020", "cord19_latest_20191201_new.csv")
         )
 
         dataset_id = f"cord19-2020-v{row['version']}"
@@ -143,7 +143,7 @@ def render_cord19_2020_config():
             last_update=row["Date"],
             title=f"CORD-19 2020 (v{row['version']})",
             dataset_id=dataset_id,
-            url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201.csv"
+            url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201_new.csv"
         )
         datasets_config.append(dataset_config)
 

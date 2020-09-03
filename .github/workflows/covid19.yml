@@ -1,7 +1,7 @@
 name: "Update COVID19 config"
 on:
   schedule:
-    - cron:  '0 */3 * * *'
+    - cron:  '42 6/24 * * *'
   push:
     branches:
       - master

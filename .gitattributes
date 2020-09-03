@@ -1,1 +1,2 @@
 asreviewcontrib/covid19/_version.py export-subst
+datasets/cord19-2020/cord19_latest_20191201_new.csv filter=lfs diff=lfs merge=lfs -text
