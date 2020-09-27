@@ -4,21 +4,21 @@ Create configuration data structure for each of the three datasets.
 It will read three (minimal) JSON files as input.
 """
 
-from copy import deepcopy
 import json
-from hashlib import sha512
-import os
+from copy import deepcopy
+# from hashlib import sha512
+# import os
 from pathlib import Path
-from urllib.request import urlretrieve
+# from urllib.request import urlretrieve
 
 import pandas as pd
 
-from asreviewcontrib.statistics import DataStatistics
+# from asreviewcontrib.statistics import DataStatistics
 
 
-CORD19_OVERVIEW_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html"
-CORD19_METADATA_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/{}/metadata.csv"
-CORD19_METADATA_URL_LATEST = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
+CORD19_OVERVIEW_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html"  # noqa
+CORD19_METADATA_URL = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/{}/metadata.csv"  # noqa
+CORD19_METADATA_URL_LATEST = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"  # noqa
 
 
 # Template for both the cord-all and cord-2020 datasets.
@@ -54,7 +54,7 @@ def get_latest_cord19_subset(url):
     """This function creates a 2020 subset of the CORD dataset."""
 
     df = pd.read_csv(url)
-    df = df[(df["publish_time"] >= "2019-12-01") | (df["publish_time"] == "2020") ]
+    df = df[(df["publish_time"] >= "2019-12-01") | (df["publish_time"] == "2020")]
     print(len(df))
     # sort the dataset to prevent the git repo from growing to large
     df.sort_values("cord_uid", inplace=True)
@@ -143,7 +143,7 @@ def render_cord19_2020_config():
             last_update=row["Date"],
             title=f"CORD-19 2020 (v{row['version']})",
             dataset_id=dataset_id,
-            url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201_new.csv"
+            url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201_new.csv"  # noqa
         )
         datasets_config.append(dataset_config)
 

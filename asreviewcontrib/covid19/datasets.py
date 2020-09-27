@@ -2,7 +2,7 @@ import json
 from urllib.request import urlopen
 
 from asreview.datasets import BaseDataSet, BaseVersionedDataSet
-from asreview.datasets import BaseDataGroup, dataset_from_url
+from asreview.datasets import BaseDataGroup
 
 
 def dataset_from_meta(data):
@@ -24,7 +24,7 @@ class Covid19DataGroup(BaseDataGroup):
     description = "A Free dataset on publications on the corona virus."
 
     def __init__(self):
-        base_url = "https://raw.githubusercontent.com/asreview/asreview-covid19/master/config"  #noqa
+        base_url = "https://raw.githubusercontent.com/asreview/asreview-covid19/master/config"  # noqa
         meta_file = base_url + "/all.json"
         with urlopen(meta_file) as f:
             meta_data = json.loads(f.read().decode())

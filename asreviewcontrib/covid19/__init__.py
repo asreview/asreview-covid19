@@ -1,4 +1,4 @@
-from asreviewcontrib.covid19.datasets import Covid19DataGroup
+from asreviewcontrib.covid19.datasets import Covid19DataGroup  # noqa
 
 __extension_name__ = "asreview-covid19"
 

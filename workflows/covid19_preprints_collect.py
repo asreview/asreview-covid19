@@ -4,21 +4,21 @@ Create configuration data structure for each of the three datasets.
 It will read three (minimal) JSON files as input.
 """
 
-from copy import deepcopy
 import json
-from hashlib import sha512
-import os
+from copy import deepcopy
+# from hashlib import sha512
+# import os
 from pathlib import Path
-from urllib.request import urlretrieve
+# from urllib.request import urlretrieve
 import urllib.request
 
-import pandas as pd
+# import pandas as pd
 
-from asreviewcontrib.statistics import DataStatistics
+# from asreviewcontrib.statistics import DataStatistics
 
 
-PREPRINTS_METADATA_URL = "https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/metadata.json"
-PREPRINTS_METADATA_URL_DATA = "https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/covid19_preprints.csv"
+PREPRINTS_METADATA_URL = "https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/metadata.json"  # noqa
+PREPRINTS_METADATA_URL_DATA = "https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/covid19_preprints.csv"  # noqa
 
 
 # Template for the Covid19 preprint datasets.
@@ -27,7 +27,7 @@ COVID19_PREP_TEMPLATE = {
     "authors": ["Nicholas Fraser", "Bianca Kramer"],
     "topic": "Covid-19",
     "link": "https://doi.org/10.6084/m9.figshare.12033672.v12",
-    "img_url": "https://github.com/asreview/asreview-covid19/blob/master/preprints-card-image.png?raw=true",  #noqa
+    "img_url": "https://github.com/asreview/asreview-covid19/blob/master/preprints-card-image.png?raw=true",  # noqa
     "license": "CC0",
 }
 
@@ -98,7 +98,7 @@ def render_preprints_config():
     with urllib.request.urlopen(PREPRINTS_METADATA_URL) as url:
         metadata = json.loads(url.read().decode())
 
-   # Create the individual configuration files.
+    # Create the individual configuration files.
     dataset_id = f"covid19-preprints-v{metadata['sample_date']}"
 
     datasets_config = []
