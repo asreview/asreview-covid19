@@ -13,9 +13,9 @@
                 "link": "https://pages.semanticscholar.org/coronavirus-research",
                 "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
                 "license": "Covid dataset license",
-                "dataset_id": "cord19-2020-v2020-11-02",
-                "title": "CORD-19 2020 (v2020-11-02)",
-                "last_update": "2020-11-02",
+                "dataset_id": "cord19-2020-v2020-11-03",
+                "title": "CORD-19 2020 (v2020-11-03)",
+                "last_update": "2020-11-03",
                 "url": "https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201_new.csv"
             }
         ]
@@ -2152,6 +2152,20 @@
                 "title": "CORD-19 (v2020-11-02)",
                 "last_update": "2020-11-02",
                 "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-11-02/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-v2020-11-03",
+                "title": "CORD-19 (v2020-11-03)",
+                "last_update": "2020-11-03",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-11-03/metadata.csv"
             }
         ]
     },
@@ -2170,9 +2184,9 @@
                 "link": "https://doi.org/10.6084/m9.figshare.12033672.v12",
                 "img_url": "https://github.com/asreview/asreview-covid19/blob/master/preprints-card-image.png?raw=true",
                 "license": "CC0",
-                "dataset_id": "covid19-preprints-v2020-10-11",
-                "title": "COVID-19 preprints (v2020-10-11)",
-                "last_update": "2020-10-11",
+                "dataset_id": "covid19-preprints-v2020-10-18",
+                "title": "COVID-19 preprints (v2020-10-18)",
+                "last_update": "2020-10-18",
                 "url": "https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/covid19_preprints.csv"
             }
         ]
