@@ -21,7 +21,7 @@ def dataset_from_meta(data):
 
 class Covid19DataGroup(BaseDataGroup):
     group_id = "covid19"
-    description = "A Free dataset on publications on the corona virus."
+    description = "A free dataset on publications on the corona virus."
 
     def __init__(self):
         base_url = "https://raw.githubusercontent.com/asreview/asreview-covid19/master/config"  # noqa
