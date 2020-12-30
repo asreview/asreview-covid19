@@ -26,7 +26,7 @@ class Covid19DataGroup(BaseDataGroup):
     def __init__(self):
         base_url = "https://raw.githubusercontent.com/asreview/asreview-covid19/master/config"  # noqa
         meta_file = base_url + "/all.json"
-        with urlopen(meta_file) as f:
+        with urlopen(meta_file, timeout=10) as f:
             meta_data = json.loads(f.read().decode())
 
         datasets = []
