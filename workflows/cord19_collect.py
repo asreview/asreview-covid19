@@ -143,7 +143,7 @@ def render_cord19_2020_config():
             last_update=row["Date"],
             title=f"CORD-19 2020 (v{row['version']})",
             dataset_id=dataset_id,
-            url="https://raw.githubusercontent.com/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201_new.csv"  # noqa
+            url="https://media.githubusercontent.com/media/asreview/asreview-covid19/master/datasets/cord19-2020/cord19_latest_20191201_new.csv"  # noqa
         )
         datasets_config.append(dataset_config)
 
