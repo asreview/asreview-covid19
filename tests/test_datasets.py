@@ -1,7 +1,6 @@
 from pytest import mark
 import urllib
 
-from asreview.datasets import get_available_datasets
 from asreview.datasets import DatasetManager
 
 
