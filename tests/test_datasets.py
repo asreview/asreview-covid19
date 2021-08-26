@@ -21,17 +21,3 @@ def test_find_datasets(data_name):
     data = DatasetManager().find(data_name)
 
     assert _dataset_url_exists(data.get())
-
-
-def test_get_available_datasets():
-
-    datasets = DatasetManager().list('covid19')
-
-    for key in ASREVIEW_COVID19_DATASET_COLLECTIONS:
-
-        assert key in datasets.keys()
-
-        for dataset in datasets[key].list():
-            assert dataset.title is not None
-            assert dataset.url is not None
-            assert dataset.dataset_id is not None
