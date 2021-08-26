@@ -20,7 +20,7 @@ def _dataset_url_exists(url):
 def test_find_datasets(data_name):
     data = DatasetManager().find(data_name)
 
-    assert _dataset_url_exists(data)
+    assert _dataset_url_exists(data.get())
 
 
 def test_get_available_datasets():
