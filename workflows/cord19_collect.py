@@ -205,8 +205,8 @@ def render_cord19_config():
 
 if __name__ == "__main__":
 
-    # create config file for cord19 full
-    cord_2020_config = render_cord19_2020_config()
+    # # create config file for cord19 full
+    # cord_2020_config = render_cord19_2020_config()
 
     # create config file for cord19 full
     cord_all_config = render_cord19_config()
@@ -219,7 +219,11 @@ if __name__ == "__main__":
 
     # update values
     current_config["cord19-all"] = cord_all_config
-    current_config["cord19-2020"] = cord_2020_config
+    try:
+        del current_config["cord19-2020"]
+    except Exception:
+        pass
+    # current_config["cord19-2020"] = cord_2020_config
 
     with open(config_fp, "w") as f:
         json.dump(current_config, fp=f, indent=4)
