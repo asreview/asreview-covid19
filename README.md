@@ -32,7 +32,6 @@ pip install --upgrade asreview-covid19
 The following datasets are available:
 
 - [CORD-19 dataset](#cord-19-dataset)
-  - [CORD-19 2020 dataset](#cord-19-2020-dataset)
 - [COVID19 preprints dataset](#covid19-preprints-dataset)
 
 :exclamation: The datasets are checked for updates every couple of hours such that the latest collections are available in the ASReview COVID19 plugin and ASReview software.
@@ -41,10 +40,6 @@ The following datasets are available:
 
 ### CORD-19 dataset
 The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is a dataset with scientific publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications, the preprint servers bioRxiv, medRxiv and arXiv, and papers contributed by specific publishers (currently Elsevier). The dataset is compiled and maintained by a collaboration of the Allen Institute for AI, the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health. The full dataset contains metadata of more than **100K publications** on COVID-19 and coronavirus-related research. **The CORD-19 dataset receives daily updates and is directly available in the ASReview software.** The most recent versions of the dataset can be found here: https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html
-
-##### CORD-19 2020 dataset
-
-The CORD-19 dataset contains publications on all publications on coronavirus-related research. Therefore, the dataset is not specific for SARS-CoV-2 or COVID19. A subset of the CORD-19 dataset is created containing publications from Dec 2019 onwards (i.e. publication relating to the current COVID-19 outbreak). This dataset can be found as `CORD-19 2020` in the software.
 
 ### COVID19 preprints dataset
 The [COVID19 preprints dataset](https://github.com/nicholasmfraser/covid19_preprints) is created by [Nicholas Fraser](https://github.com/nicholasmfraser) and [Bianca Kramer](https://github.com/bmkramer), by collecting metadata of COVID19-related preprints from over 15 preprint servers with DOIs registered with Crossref or DataCite, and from arXiv. The dataset contains metadata of >10K preprints on COVID-19 and coronavirus-related research. All versions are archived on [Figshare](https://doi.org/10.6084/m9.figshare.12033672). The COVID19 preprints dataset receives weekly updates.
