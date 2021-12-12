@@ -9,6 +9,7 @@
       "license":"Covid dataset license",
       "dataset_id":"cord19-latest",
       "title":"CORD-19 (latest)",
+      "year": 2020,
       "filepath":"https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-13/metadata.csv"
    },
    "covid19-preprints-latest":{
@@ -22,6 +23,7 @@
       "license":"CC0",
       "dataset_id":"covid19-preprints-latest",
       "title":"COVID-19 preprints (latest)",
+      "year": 2020,
       "filepath":"https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/covid19_preprints.csv"
    }
 }
