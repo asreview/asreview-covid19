@@ -10,7 +10,7 @@
       "dataset_id":"cord19-latest",
       "title":"CORD-19 (latest)",
       "year": 2020,
-      "filepath":"https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-13/metadata.csv"
+      "filepath":"https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/metadata.csv"
    },
    "covid19-preprints-latest":{
       "description":"Preprints related to COVID-19",
