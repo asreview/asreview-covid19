@@ -3769,6 +3769,20 @@
                 "title": "CORD-19 (v2021-11-29)",
                 "last_update": "2021-11-29",
                 "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2021-11-29/metadata.csv"
+            },
+            {
+                "description": "A free dataset on publications on the corona virus.",
+                "authors": [
+                    "Allen institute for AI"
+                ],
+                "topic": "Covid-19",
+                "link": "https://pages.semanticscholar.org/coronavirus-research",
+                "img_url": "https://pages.semanticscholar.org/hs-fs/hubfs/covid-image.png?width=300&name=covid-image.png",
+                "license": "Covid dataset license",
+                "dataset_id": "cord19-v2021-12-13",
+                "title": "CORD-19 (v2021-12-13)",
+                "last_update": "2021-12-13",
+                "url": "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2021-12-13/metadata.csv"
             }
         ]
     },
