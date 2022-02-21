@@ -36,7 +36,7 @@ The following datasets are available:
 
 :exclamation: The datasets are checked for updates every couple of hours such that the latest collections are available in the ASReview COVID19 plugin and ASReview software.
 
-[![ASReview CORD19 datasets](https://github.com/asreview/asreview/blob/master/images/asreview-covid19-screenshot.png?raw=true)](https://github.com/asreview/asreview-covid19)
+[![ASReview CORD19 datasets](https://github.com/asreview/asreview/blob/master/docs/images/asreview-covid19-screenshot.png?raw=true)](https://github.com/asreview/asreview-covid19)
 
 ### CORD-19 dataset
 The [CORD-19 dataset](https://pages.semanticscholar.org/coronavirus-research) is a dataset with scientific publications on COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from PubMed Central, the WHO COVID-19 database of publications, the preprint servers bioRxiv, medRxiv and arXiv, and papers contributed by specific publishers (currently Elsevier). The dataset is compiled and maintained by a collaboration of the Allen Institute for AI, the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health. The full dataset contains metadata of more than **100K publications** on COVID-19 and coronavirus-related research. **The CORD-19 dataset receives daily updates and is directly available in the ASReview software.** The most recent versions of the dataset can be found here: https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html
