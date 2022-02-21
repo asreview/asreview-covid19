@@ -3,6 +3,9 @@
 Extension to add publications on COVID-19 to [ASReview](https://github.com/asreview/asreview).
 
 # ASReview against COVID-19
+
+[![Downloads](https://pepy.tech/badge/asreview-covid19)](https://pepy.tech/project/asreview-covid19) [![PyPI version](https://badge.fury.io/py/asreview-covid19.svg)](https://badge.fury.io/py/asreview-covid19) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3764749.svg)](https://doi.org/10.5281/zenodo.3764749) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 The Active learning for Systematic Reviews software [ASReview](https://github.com/asreview/asreview) implements learning algorithms that interactively query the researcher during the title and abstract reading phase of a systematic search. This way of interactive training is known as active learning. ASReview offers support for classical learning algorithms and state-of-the-art learning algorithms like neural networks. The software can be used for traditional systematic reviews for which the user uploads a dataset of papers, or one can make use of the built-in datasets.
 
 To help combat the COVID-19 crisis, the ASReview team released an extension that integrates the latest scientific datasets on COVID-19 in the ASReview software. Experts can **start reviewing the latest scientific literature on COVID-19 immediately!** See [datasets](#datasets) for an overview of the datasets (daily updates).
@@ -47,8 +50,6 @@ The [COVID19 preprints dataset](https://github.com/nicholasmfraser/covid19_prepr
 The most recent version of the dataset can be found here:[https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv](https://github.com/nicholasmfraser/covid19_preprints/blob/master/data/covid19_preprints.csv).
 
 ## License, citation and contact
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3764749.svg)](https://doi.org/10.5281/zenodo.3764749) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 The ASReview software and the plugin have an Apache 2.0 LICENSE. For the datasets, please see the license of the CORD-19 dataset https://pages.semanticscholar.org/coronavirus-research. The COVID19 preprints dataset has a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/).
 
