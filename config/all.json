@@ -3885,9 +3885,9 @@
                 "link": "https://doi.org/10.6084/m9.figshare.12033672.v12",
                 "img_url": "https://github.com/asreview/asreview-covid19/blob/master/preprints-card-image.png?raw=true",
                 "license": "CC0",
-                "dataset_id": "covid19-preprints-v2022-03-03",
-                "title": "COVID-19 preprints (v2022-03-03)",
-                "last_update": "2022-03-03",
+                "dataset_id": "covid19-preprints-v2022-03-30",
+                "title": "COVID-19 preprints (v2022-03-30)",
+                "last_update": "2022-03-30",
                 "url": "https://raw.githubusercontent.com/nicholasmfraser/covid19_preprints/master/data/covid19_preprints.csv"
             }
         ]
