@@ -60,7 +60,7 @@ setup(
     packages=find_namespace_packages(include=['asreviewcontrib.*']),
     namespace_package=["asreview"],
     install_requires=[
-        "asreview>=0.9.4",
+        "asreview<1.0",
     ],
 
     extras_require=DEPS,
