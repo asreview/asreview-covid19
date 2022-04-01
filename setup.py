@@ -47,7 +47,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 7 - Inactive',
 
         # Pick your license as you wish
         'License :: OSI Approved :: Apache Software License',
