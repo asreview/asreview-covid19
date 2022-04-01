@@ -2,7 +2,9 @@
 
 Extension to add publications on COVID-19 to [ASReview](https://github.com/asreview/asreview).
 
-# ASReview against COVID-19
+# ASReview against COVID-19 (Deprecated)
+
+## This extension is deprecated. It still works for version 0.x of ASReview but datasets are no longer updated.
 
 [![Downloads](https://pepy.tech/badge/asreview-covid19)](https://pepy.tech/project/asreview-covid19) [![PyPI version](https://badge.fury.io/py/asreview-covid19.svg)](https://badge.fury.io/py/asreview-covid19) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3764749.svg)](https://doi.org/10.5281/zenodo.3764749) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
