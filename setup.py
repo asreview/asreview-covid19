@@ -47,7 +47,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 7 - Inactive',
 
         # Pick your license as you wish
         'License :: OSI Approved :: Apache Software License',
@@ -60,7 +60,7 @@ setup(
     packages=find_namespace_packages(include=['asreviewcontrib.*']),
     namespace_package=["asreview"],
     install_requires=[
-        "asreview>=0.9.4",
+        "asreview<1.0",
     ],
 
     extras_require=DEPS,
